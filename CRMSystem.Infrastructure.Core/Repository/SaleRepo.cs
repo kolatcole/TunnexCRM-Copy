@@ -36,6 +36,12 @@ namespace CRMSystem.Infrastructure
 
         }
 
+        //public async Task<List<Sale>> getAllByIDAsync(int ID)
+        //{
+        //    var sales = await _context.Sales.Where(x => x.UserCreated == ID).ToListAsync();
+        //    return sales;
+        //}
+
         public async Task<Sale> getAsync(int ID)
         {
             try

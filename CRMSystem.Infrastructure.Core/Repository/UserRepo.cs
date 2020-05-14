@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace CRMSystem.Infrastructure
 {
-    public class UserRepo : IRepo<User>
+    public class UserRepo : IRepo<User>,IUserRepo
     {
         private readonly TContext _context;
         public UserRepo(TContext context)
@@ -49,6 +49,21 @@ namespace CRMSystem.Infrastructure
 
         }
 
+        public async Task<User> GetUserByNameandPassword(string username, string password)
+        {
+            User user = null;   
+            try 
+            {
+               user = await _context.AppUsers.Where(x => x.Username == username && x.Password == password).FirstAsync();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+
+            }
+            return user;
+        }
+
         public async Task<int> insertAsync(User data)
         {
             var user = new User();
@@ -62,7 +77,11 @@ namespace CRMSystem.Infrastructure
                         Gender=data.Gender,
                         Image=data.Image,
                         Name=data.Name,
-                        Phone=data.Phone
+                        Phone=data.Phone,
+                        DateCreated=DateTime.Now,
+                        Email=data.Email,
+                        Password=data.Password,
+                        Username=data.Username
                     };
                     await _context.AppUsers.AddAsync(user);
                     await _context.SaveChangesAsync();
@@ -83,7 +102,6 @@ namespace CRMSystem.Infrastructure
 
         public async Task<int> updateAsync(User data)
         {
-            int ID=0;
             var newUser = await _context.AppUsers.FindAsync(data.ID);
             try
             {
@@ -95,9 +113,13 @@ namespace CRMSystem.Infrastructure
                     newUser.Post = data.Post;
                     newUser.DateModified = DateTime.Now;
                     newUser.Gender = data.Gender;
+                    newUser.Username = data.Username;
+                    newUser.Password = data.Password;
+                    newUser.Email = data.Email;
+                    newUser.DateModified = DateTime.Now;
 
                     _context.Update(newUser);
-                    ID = await _context.SaveChangesAsync();
+                     await _context.SaveChangesAsync();
                 }
 
             }
@@ -105,7 +127,7 @@ namespace CRMSystem.Infrastructure
             {
                 throw ex;
             }
-            return ID;
+            return newUser.ID;
         }
     }
 }

@@ -27,6 +27,11 @@ namespace CRMSystem.Infrastructure
             return carts;
         }
 
+        public Task<List<Cart>> getAllByIDAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Cart> getAsync(int ID)
         {
             var cart = await _context.Carts.Where(x => x.ID == ID).FirstOrDefaultAsync();
@@ -65,7 +70,6 @@ namespace CRMSystem.Infrastructure
 
         public async Task<int> updateAsync(Cart data)
         {
-            int ID = 0;
             var cart = await _context.Carts.Where(x => x.ID == data.ID).SingleOrDefaultAsync();
             try
             {
@@ -79,7 +83,7 @@ namespace CRMSystem.Infrastructure
 
 
                     _context.Carts.Update(cart);
-                    ID = await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
                 }
 
             }

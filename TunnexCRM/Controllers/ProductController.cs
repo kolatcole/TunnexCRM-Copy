@@ -35,7 +35,7 @@ namespace CRMSystem.Presentation
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        [HttpPut("UpdateProduct")]
+        [HttpPost("UpdateProduct")]
         public async Task<IActionResult> Update(Product data)
         {
             var result = await _service.updateProductAsync(data);

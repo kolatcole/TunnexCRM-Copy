@@ -65,6 +65,7 @@ namespace CRMSystem
             services.AddScoped<IRepo<Invoice>, InvoiceRepo>();
             services.AddScoped<IRepo<Payment>, PaymentRepo>();
             services.AddScoped<IInvoiceRepo, InvoiceRepo>();
+            services.AddScoped<IUserRepo, UserRepo>();
 
 
 

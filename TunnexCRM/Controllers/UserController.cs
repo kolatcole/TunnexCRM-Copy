@@ -14,9 +14,11 @@ namespace CRMSystem.Presentation
     public class UserController : ControllerBase
     {
         private readonly IRepo<User> _repo;
-        public UserController(IRepo<User> repo)
+        private readonly IUserRepo _uRepo;
+        public UserController(IRepo<User> repo, IUserRepo uRepo)
         {
             _repo = repo;
+            _uRepo = uRepo;
         }
 
         /// <summary>
@@ -33,6 +35,22 @@ namespace CRMSystem.Presentation
             return NotFound();
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        [HttpPost("Authenticate")]
+        public async Task<IActionResult> Authenticate(string username, string password)
+        {
+            var result = await _uRepo.GetUserByNameandPassword(username,password);
+            if (result == null)
+                return Unauthorized();
+            return Ok(result);
+        }
+
         /// <summary>
         /// 
         /// </summary>

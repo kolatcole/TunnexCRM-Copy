@@ -1316,3 +1316,420 @@ WHERE @@ROWCOUNT = 1 AND [ID] = scope_identity();"
 2020-05-14 16:59:20.656 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Int32"'.
 2020-05-14 16:59:20.701 +01:00 [Information] Executed action "CRMSystem.Presentation.SaleController.Save (CRMSystem.Presentation.Core)" in 16984.3696ms
 2020-05-14 16:59:20.714 +01:00 [Information] Request finished in 17100.7894ms 200 application/json; charset=utf-8
+2020-05-14 18:04:32.568 +01:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:52848/  0
+2020-05-14 18:04:32.568 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/api/values  
+2020-05-14 18:04:32.568 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger  
+2020-05-14 18:04:32.712 +01:00 [Information] Request finished in 165.6702ms 200 
+2020-05-14 18:04:32.758 +01:00 [Information] Request finished in 211.822ms 301 
+2020-05-14 18:04:32.770 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger/index.html  
+2020-05-14 18:04:33.219 +01:00 [Information] Request finished in 440.1645ms 200 text/html;charset=utf-8
+2020-05-14 18:04:33.329 +01:00 [Information] Request finished in 782.1882ms 404 
+2020-05-14 18:04:33.793 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger/v1/swagger.json  
+2020-05-14 18:04:34.046 +01:00 [Information] Request finished in 253.6023ms 200 application/json;charset=utf-8
+2020-05-14 18:05:01.597 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/SaveUser application/json-patch+json 265
+2020-05-14 18:05:01.605 +01:00 [Information] Policy execution successful.
+2020-05-14 18:05:01.697 +01:00 [Information] Route matched with "{action = \"Save\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(CRMSystem.Domains.User)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:05:02.428 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Save (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:05:02.835 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.865 +01:00 [Warning] No type was specified for the decimal column '"AmountPaid"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.877 +01:00 [Warning] No type was specified for the decimal column '"Balance"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.881 +01:00 [Warning] No type was specified for the decimal column '"Discount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.885 +01:00 [Warning] No type was specified for the decimal column '"Tax"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.894 +01:00 [Warning] No type was specified for the decimal column '"TaxPercent"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.897 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.901 +01:00 [Warning] No type was specified for the decimal column '"Quantity"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.904 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Payment"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.910 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.913 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.916 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:02.919 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:05:03.118 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:05:03.974 +01:00 [Information] Executed DbCommand ("234"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AppUsers] ([DateCreated], [DateModified], [Email], [Gender], [Image], [Name], [Password], [Phone], [Post], [UserCreated], [UserModified], [Username])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID]
+FROM [AppUsers]
+WHERE @@ROWCOUNT = 1 AND [ID] = scope_identity();"
+2020-05-14 18:05:04.032 +01:00 [Information] Executed action method "CRMSystem.Presentation.UserController.Save (CRMSystem.Presentation.Core)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1592.8822ms.
+2020-05-14 18:05:04.053 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Int32"'.
+2020-05-14 18:05:04.133 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Save (CRMSystem.Presentation.Core)" in 2415.7105ms
+2020-05-14 18:05:04.155 +01:00 [Information] Request finished in 2562.5953ms 200 application/json; charset=utf-8
+2020-05-14 18:05:22.522 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/Authenticate?username=jnn&password=jk  0
+2020-05-14 18:05:22.534 +01:00 [Information] Policy execution successful.
+2020-05-14 18:05:22.584 +01:00 [Information] Route matched with "{action = \"Authenticate\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:05:22.650 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:05:22.672 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:05:24.360 +01:00 [Information] Executed DbCommand ("1,338"ms) [Parameters=["@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[ID], [x].[DateCreated], [x].[DateModified], [x].[Email], [x].[Gender], [x].[Image], [x].[Name], [x].[Password], [x].[Phone], [x].[Post], [x].[UserCreated], [x].[UserModified], [x].[Username]
+FROM [AppUsers] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)"
+2020-05-14 18:05:24.932 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2020-05-14 18:05:24.967 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+2020-05-14 18:05:25.546 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" in 2957.1247ms
+2020-05-14 18:05:25.875 +01:00 [Error] Connection id ""0HLVO53FJ4UAL"", Request id ""0HLVO53FJ4UAL:00000002"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at CRMSystem.Infrastructure.UserRepo.GetUserByNameandPassword(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Infrastructure.Core\Repository\UserRepo.cs:line 61
+   at CRMSystem.Presentation.UserController.Authenticate(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\TunnexCRM\Controllers\UserController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-05-14 18:05:25.892 +01:00 [Information] Request finished in 3373.8342ms 500 
+2020-05-14 18:05:47.517 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/Authenticate?username=string&password=string  0
+2020-05-14 18:05:47.554 +01:00 [Information] Policy execution successful.
+2020-05-14 18:05:47.562 +01:00 [Information] Route matched with "{action = \"Authenticate\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:05:47.574 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:05:47.579 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:05:47.592 +01:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[ID], [x].[DateCreated], [x].[DateModified], [x].[Email], [x].[Gender], [x].[Image], [x].[Name], [x].[Password], [x].[Phone], [x].[Post], [x].[UserCreated], [x].[UserModified], [x].[Username]
+FROM [AppUsers] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)"
+2020-05-14 18:05:47.611 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2020-05-14 18:05:47.637 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+2020-05-14 18:05:48.045 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" in 480.3029ms
+2020-05-14 18:05:48.062 +01:00 [Error] Connection id ""0HLVO53FJ4UAM"", Request id ""0HLVO53FJ4UAM:00000004"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at CRMSystem.Infrastructure.UserRepo.GetUserByNameandPassword(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Infrastructure.Core\Repository\UserRepo.cs:line 61
+   at CRMSystem.Presentation.UserController.Authenticate(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\TunnexCRM\Controllers\UserController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-05-14 18:05:48.079 +01:00 [Information] Request finished in 565.3409ms 500 
+2020-05-14 18:06:44.305 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/Authenticate?username=string&password=string  0
+2020-05-14 18:06:44.319 +01:00 [Information] Policy execution successful.
+2020-05-14 18:06:44.323 +01:00 [Information] Route matched with "{action = \"Authenticate\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:06:44.330 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:07:05.378 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:07:05.470 +01:00 [Information] Executed DbCommand ("85"ms) [Parameters=["@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[ID], [x].[DateCreated], [x].[DateModified], [x].[Email], [x].[Gender], [x].[Image], [x].[Name], [x].[Password], [x].[Phone], [x].[Post], [x].[UserCreated], [x].[UserModified], [x].[Username]
+FROM [AppUsers] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)"
+2020-05-14 18:07:05.487 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2020-05-14 18:07:05.514 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+2020-05-14 18:12:43.136 +01:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:52848/  0
+2020-05-14 18:12:43.136 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger  
+2020-05-14 18:12:43.136 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/api/values  
+2020-05-14 18:12:43.305 +01:00 [Information] Request finished in 186.4188ms 200 
+2020-05-14 18:12:43.367 +01:00 [Information] Request finished in 250.6236ms 301 
+2020-05-14 18:12:43.373 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger/index.html  
+2020-05-14 18:12:43.670 +01:00 [Information] Request finished in 554.5389ms 404 
+2020-05-14 18:12:43.694 +01:00 [Information] Request finished in 307.8285ms 200 text/html;charset=utf-8
+2020-05-14 18:12:44.270 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger/v1/swagger.json  
+2020-05-14 18:12:44.772 +01:00 [Information] Request finished in 485.692ms 200 application/json;charset=utf-8
+2020-05-14 18:12:59.257 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/Authenticate?username=string&password=string  0
+2020-05-14 18:12:59.264 +01:00 [Information] Policy execution successful.
+2020-05-14 18:12:59.362 +01:00 [Information] Route matched with "{action = \"Authenticate\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:12:59.645 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:13:06.134 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.138 +01:00 [Warning] No type was specified for the decimal column '"AmountPaid"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.141 +01:00 [Warning] No type was specified for the decimal column '"Balance"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.144 +01:00 [Warning] No type was specified for the decimal column '"Discount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.149 +01:00 [Warning] No type was specified for the decimal column '"Tax"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.153 +01:00 [Warning] No type was specified for the decimal column '"TaxPercent"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.156 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.159 +01:00 [Warning] No type was specified for the decimal column '"Quantity"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.162 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Payment"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.168 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.172 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.177 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.180 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:13:06.301 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:13:07.080 +01:00 [Information] Executed DbCommand ("40"ms) [Parameters=["@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[ID], [x].[DateCreated], [x].[DateModified], [x].[Email], [x].[Gender], [x].[Image], [x].[Name], [x].[Password], [x].[Phone], [x].[Post], [x].[UserCreated], [x].[UserModified], [x].[Username]
+FROM [AppUsers] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)"
+2020-05-14 18:13:07.209 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2020-05-14 18:13:07.289 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+2020-05-14 18:13:07.630 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" in 8260.3767ms
+2020-05-14 18:13:07.666 +01:00 [Error] Connection id ""0HLVO581Q61LR"", Request id ""0HLVO581Q61LR:00000002"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at CRMSystem.Infrastructure.UserRepo.GetUserByNameandPassword(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Infrastructure.Core\Repository\UserRepo.cs:line 61
+   at CRMSystem.Presentation.UserController.Authenticate(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\TunnexCRM\Controllers\UserController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-05-14 18:13:07.680 +01:00 [Information] Request finished in 8423.7321ms 500 
+2020-05-14 18:13:12.812 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/Authenticate?username=string&password=string  0
+2020-05-14 18:13:12.820 +01:00 [Information] Policy execution successful.
+2020-05-14 18:13:12.828 +01:00 [Information] Route matched with "{action = \"Authenticate\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:13:12.841 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:13:29.686 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:13:29.714 +01:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[ID], [x].[DateCreated], [x].[DateModified], [x].[Email], [x].[Gender], [x].[Image], [x].[Name], [x].[Password], [x].[Phone], [x].[Post], [x].[UserCreated], [x].[UserModified], [x].[Username]
+FROM [AppUsers] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)"
+2020-05-14 18:13:29.737 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2020-05-14 18:13:29.764 +01:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"CRMSystem.Infrastructure.TContext"'."
+""System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)"
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+2020-05-14 18:13:30.106 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" in 17273.7409ms
+2020-05-14 18:13:30.118 +01:00 [Error] Connection id ""0HLVO581Q61LQ"", Request id ""0HLVO581Q61LQ:00000003"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at CRMSystem.Infrastructure.UserRepo.GetUserByNameandPassword(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Infrastructure.Core\Repository\UserRepo.cs:line 61
+   at CRMSystem.Presentation.UserController.Authenticate(String username, String password) in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\TunnexCRM\Controllers\UserController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-05-14 18:13:30.130 +01:00 [Information] Request finished in 17319.5382ms 500 
+2020-05-14 18:13:39.420 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/SaveUser application/json-patch+json 265
+2020-05-14 18:13:39.425 +01:00 [Information] Policy execution successful.
+2020-05-14 18:13:39.441 +01:00 [Information] Route matched with "{action = \"Save\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Save(CRMSystem.Domains.User)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:13:39.774 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Save (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:13:39.785 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:13:39.998 +01:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AppUsers] ([DateCreated], [DateModified], [Email], [Gender], [Image], [Name], [Password], [Phone], [Post], [UserCreated], [UserModified], [Username])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID]
+FROM [AppUsers]
+WHERE @@ROWCOUNT = 1 AND [ID] = scope_identity();"
+2020-05-14 18:13:40.045 +01:00 [Information] Executed action method "CRMSystem.Presentation.UserController.Save (CRMSystem.Presentation.Core)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 258.7777ms.
+2020-05-14 18:13:40.061 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Int32"'.
+2020-05-14 18:13:40.102 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Save (CRMSystem.Presentation.Core)" in 657.6453ms
+2020-05-14 18:13:40.108 +01:00 [Information] Request finished in 686.837ms 200 application/json; charset=utf-8
+2020-05-14 18:13:44.237 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/Authenticate?username=string&password=string  0
+2020-05-14 18:13:44.246 +01:00 [Information] Policy execution successful.
+2020-05-14 18:13:44.252 +01:00 [Information] Route matched with "{action = \"Authenticate\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:13:44.262 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:13:46.243 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:13:46.251 +01:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[ID], [x].[DateCreated], [x].[DateModified], [x].[Email], [x].[Gender], [x].[Image], [x].[Name], [x].[Password], [x].[Phone], [x].[Post], [x].[UserCreated], [x].[UserModified], [x].[Username]
+FROM [AppUsers] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)"
+2020-05-14 18:13:46.318 +01:00 [Information] Executed action method "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2053.8817ms.
+2020-05-14 18:13:46.333 +01:00 [Information] Executing ObjectResult, writing value of type '"CRMSystem.Domains.User"'.
+2020-05-14 18:13:46.375 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Authenticate (CRMSystem.Presentation.Core)" in 2118.7922ms
+2020-05-14 18:13:46.380 +01:00 [Information] Request finished in 2142.2302ms 200 application/json; charset=utf-8
+2020-05-14 18:49:56.707 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/api/values  
+2020-05-14 18:49:56.707 +01:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:52848/  0
+2020-05-14 18:49:56.830 +01:00 [Information] Request finished in 136.4621ms 200 
+2020-05-14 18:49:57.131 +01:00 [Information] Request finished in 421.9523ms 404 
+2020-05-14 18:50:06.151 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger  
+2020-05-14 18:50:06.181 +01:00 [Information] Request finished in 31.6479ms 301 
+2020-05-14 18:50:06.219 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger/index.html  
+2020-05-14 18:50:06.451 +01:00 [Information] Request finished in 219.8149ms 200 text/html;charset=utf-8
+2020-05-14 18:50:06.955 +01:00 [Information] Request starting HTTP/1.1 GET http://localhost:44363/swagger/v1/swagger.json  
+2020-05-14 18:50:07.267 +01:00 [Information] Request finished in 311.2099ms 200 application/json;charset=utf-8
+2020-05-14 18:51:05.475 +01:00 [Information] Request starting HTTP/1.1 POST http://localhost:44363/api/User/UpdateUser application/json-patch+json 291
+2020-05-14 18:51:05.488 +01:00 [Information] Policy execution successful.
+2020-05-14 18:51:05.563 +01:00 [Information] Route matched with "{action = \"Update\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(CRMSystem.Domains.User)" on controller "CRMSystem.Presentation.UserController" ("CRMSystem.Presentation.Core").
+2020-05-14 18:51:06.105 +01:00 [Information] Executing action method "CRMSystem.Presentation.UserController.Update (CRMSystem.Presentation.Core)" - Validation state: Valid
+2020-05-14 18:51:06.523 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.528 +01:00 [Warning] No type was specified for the decimal column '"AmountPaid"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.531 +01:00 [Warning] No type was specified for the decimal column '"Balance"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.534 +01:00 [Warning] No type was specified for the decimal column '"Discount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.539 +01:00 [Warning] No type was specified for the decimal column '"Tax"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.544 +01:00 [Warning] No type was specified for the decimal column '"TaxPercent"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.547 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.551 +01:00 [Warning] No type was specified for the decimal column '"Quantity"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.556 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Payment"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.561 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.564 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.568 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.572 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2020-05-14 18:51:06.670 +01:00 [Information] Entity Framework Core "2.1.14-servicing-32113" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-14 18:51:07.234 +01:00 [Information] Executed DbCommand ("32"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[ID], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[Gender], [e].[Image], [e].[Name], [e].[Password], [e].[Phone], [e].[Post], [e].[UserCreated], [e].[UserModified], [e].[Username]
+FROM [AppUsers] AS [e]
+WHERE [e].[ID] = @__get_Item_0"
+2020-05-14 18:51:07.572 +01:00 [Information] Executed DbCommand ("129"ms) [Parameters=["@p12='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AppUsers] SET [DateCreated] = @p0, [DateModified] = @p1, [Email] = @p2, [Gender] = @p3, [Image] = @p4, [Name] = @p5, [Password] = @p6, [Phone] = @p7, [Post] = @p8, [UserCreated] = @p9, [UserModified] = @p10, [Username] = @p11
+WHERE [ID] = @p12;
+SELECT @@ROWCOUNT;"
+2020-05-14 18:51:07.615 +01:00 [Information] Executed action method "CRMSystem.Presentation.UserController.Update (CRMSystem.Presentation.Core)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1494.0516ms.
+2020-05-14 18:51:07.646 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Int32"'.
+2020-05-14 18:51:07.715 +01:00 [Information] Executed action "CRMSystem.Presentation.UserController.Update (CRMSystem.Presentation.Core)" in 2139.4158ms
+2020-05-14 18:51:07.738 +01:00 [Information] Request finished in 2260.0458ms 200 application/json; charset=utf-8
