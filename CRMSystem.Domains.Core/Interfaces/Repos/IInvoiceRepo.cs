@@ -10,8 +10,10 @@ namespace CRMSystem.Domains
 
         Task<int> getLastAsync();
 
-        Task<Invoice> getByNumberAsync(string invNumber);
+        Task<Invoice> getByNumberAsync(string invNumber,int customerID);
 
         Task<List<Invoice>> getByCustomerIDAsync(int customerID);
+
+
     }
 }

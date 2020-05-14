@@ -46,13 +46,15 @@ namespace CRMSystem.Domains
             {
                 LIID += 1;
                 data.Invoice.InvoiceNo = LIID.ToString();
-                data.Invoice.InvoiceNo.PadLeft(7, '0');
-                invNo = data.Invoice.InvoiceNo;
+                invNo = data.Invoice.InvoiceNo.PadLeft(7, '0');
+                
+                
 
             }
 
             // save payment if payment is available
             decimal totalAmt = 0;
+            var invIsPaid = false;
 
             if (data.Payment != null)
             {
@@ -63,13 +65,15 @@ namespace CRMSystem.Domains
                     payment.InvoiceNo = data.Invoice.InvoiceNo;
                     var PID = await _pRepo.insertAsync(payment);
                     totalAmt += payment.Amount;
+
+                    // Change payment status to true if payment amount equals cart amount
+                    if (payment.Amount == data.Cart.Amount)
+                        invIsPaid = true;
                 }
 
             }
 
 
-
-            // still need to fix amount
             var invoice = new Invoice
             { 
                 CustomerID=data.CustomerID,
@@ -79,7 +83,8 @@ namespace CRMSystem.Domains
                 CartID = CID,
                 Amount=data.Cart.Amount,
                 AmountPaid=totalAmt,
-                Balance=data.Cart.Amount-totalAmt
+                Balance=data.Cart.Amount-totalAmt,
+                IsPaid=invIsPaid
 
             };
 

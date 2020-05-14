@@ -26,10 +26,10 @@ namespace CRMSystem.Domains
             return IID;
         }
 
-        public async Task<Invoice> GetInvoiceByNumber(string InvNumber)
+        public async Task<Invoice> GetInvoiceByNumber(string InvNumber, int customerID)
         {
 
-            var invoice = await _iRepo.getByNumberAsync(InvNumber);
+            var invoice = await _iRepo.getByNumberAsync(InvNumber,customerID);
             return invoice;
 
         }
@@ -46,5 +46,10 @@ namespace CRMSystem.Domains
             return lastNumber;
         }
 
+        public async Task<int> updateAsync(Invoice data)
+        {
+            var result = await _inRepo.updateAsync(data);
+            return result;
+        }
     }
 }

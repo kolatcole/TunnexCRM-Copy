@@ -51,18 +51,18 @@ namespace CRMSystem.Infrastructure
 
         }
 
-        public async Task<Invoice> getByNumberAsync(string invNumber)
+        public async Task<Invoice> getByNumberAsync(string invNumber,int customerID)
         {
             // PENDING
-            //try
-            //{
-            //    var invoice = await _context.Invoices.Include(y=>y.Cart).Where(x => x.InvoiceNo == invNumber).FirstOrDefaultAsync();
-            //    return invoice;
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
+            try
+            {
+                var invoice = await _context.Invoices.Where(x => x.InvoiceNo == invNumber && x.CustomerID==customerID).FirstOrDefaultAsync();
+                return invoice;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             throw new NotImplementedException();
         }
@@ -137,33 +137,30 @@ namespace CRMSystem.Infrastructure
             throw new NotImplementedException();
         }
 
-        public Task<int> updateAsync(Invoice data)
+        public async Task<int> updateAsync(Invoice data)
         {
-            throw new NotImplementedException();
-            //int ID = 0;
-            //var invoice = await _context.Invoices.FindAsync(data.ID);
-            //try
-            //{
-            //    if (invoice != null)
-            //    {
-            //        invoice.UserModified = data.UserModified;
-            //        invoice. = data.UserCreated;
-            //            Amount = data.Amount;
-            //            Discount = data.Discount;
-            //            CustomerID = data.CustomerID;
-            //            ExtData = data.ExtData;
-            //            InvoiceDate = DateTime.Now;
+            
+            var invoice = await _context.Invoices.FindAsync(data.ID);
+            try
+            {
+                if (invoice != null)
+                {
+                    invoice.DateModified = DateTime.Now;
+                    invoice.UserModified = data.UserModified;
+                    invoice.AmountPaid = data.AmountPaid;
+                    invoice.Balance = data.Balance;
 
-            //        _context.Invoices.Update(newInvoice);
-            //        ID = await _context.SaveChangesAsync();
-            //    }
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-            //return ID;
+                    _context.Invoices.Update(invoice);
+                    await _context.SaveChangesAsync();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return invoice.ID;
         }
     }
 }

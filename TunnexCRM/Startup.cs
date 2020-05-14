@@ -69,7 +69,7 @@ namespace CRMSystem
 
 
 
-
+            services.AddTransient<IPaymentService, PaymentService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ISaleService, SaleService>();
             services.AddTransient<IRoleService, RoleService>();
