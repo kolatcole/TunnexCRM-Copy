@@ -35,7 +35,8 @@ namespace CRMSystem.Infrastructure
         public DbSet<Item> Items { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
-
+        public DbSet<Lead> Leads { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
     }
 }

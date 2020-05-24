@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRMSystem.Infrastructure
 {
-    public class PaymentRepo : IRepo<Payment>
+    public class PaymentRepo : IRepo<Payment>, IPaymentRepo
     {
         private readonly TContext _context;
         public PaymentRepo(TContext context)
@@ -51,6 +51,12 @@ namespace CRMSystem.Infrastructure
 
         }
 
+        public async Task<List<Payment>> getPaymentByInvoiceNo(string invNo)
+        {
+            var payments = await _context.Payments.Where(x => x.InvoiceNo == invNo).ToListAsync();
+            return payments;
+        }
+
         public async Task<int> insertAsync(Payment data)
         {
             var payment = new Payment();
@@ -90,28 +96,8 @@ namespace CRMSystem.Infrastructure
         public Task<int> updateAsync(Payment data)
         {
             throw new NotImplementedException();
-            //int ID = 0;
-            //var payment = await _context.Payments.FindAsync(data.ID);
-            //try
-            //{
-            //    if (payment != null)
-            //    {
-            //        payment. = DateTime.Now;
-            //        newProduct.UserModified = data.UserModified;
-            //        newProduct.Quantity = data.Quantity;
-            //        newProduct.Name = data.Name;
-            //        newProduct.Image = data.Image;
-
-            //        _context.Products.Update(newProduct);
-            //        ID = await _context.SaveChangesAsync();
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-            //return ID;
+           
         }
+       
     }
 }

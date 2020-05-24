@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
@@ -39,7 +40,7 @@ namespace CRMSystem
             //    c.AddPolicy("AllowOrigin", opt => opt.AllowAnyOrigin());
             //});
             services.AddCors();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(x => x.EnableEndpointRouting = false);
             services.AddSwaggerGen(opt =>
             {
                 opt.SwaggerDoc("v1", new OpenApiInfo
@@ -53,6 +54,8 @@ namespace CRMSystem
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultTLocal"), b => b.MigrationsAssembly("CRMSystem.Presentation.Core"));
             });
 
+            services.AddScoped<IRepo<Lead>, LeadRepo>();
+            services.AddScoped<IRepo<Message>, MessageRepo>();
             services.AddScoped<IRepo<User>, UserRepo>();
             services.AddScoped<IRepo<Product>, ProductRepo>();
             services.AddScoped<IRepo<Price>, PriceRepo>();
@@ -64,6 +67,7 @@ namespace CRMSystem
             services.AddScoped<IRepo<Cart>, CartRepo>();
             services.AddScoped<IRepo<Invoice>, InvoiceRepo>();
             services.AddScoped<IRepo<Payment>, PaymentRepo>();
+            services.AddScoped<IPaymentRepo, PaymentRepo>();
             services.AddScoped<IInvoiceRepo, InvoiceRepo>();
             services.AddScoped<IUserRepo, UserRepo>();
 
@@ -76,11 +80,12 @@ namespace CRMSystem
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IInvoiceService, InvoiceService>();
+            services.AddTransient<ILeadService, LeadService>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             //if (env.IsDevelopment())
             //{
@@ -97,13 +102,34 @@ namespace CRMSystem
             //    opt.AllowAnyOrigin();
             //});
 
-            app.UseCors(opt =>
 
-                opt.AllowAnyOrigin()
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials()
-            );
+            // b4 3.0
+            //app.UseCors(opt =>
+
+            //    opt.AllowAnyOrigin()
+            //    .AllowAnyHeader()
+            //    .AllowAnyMethod()
+            //    .AllowCredentials()
+            //);
+
+            // b4 3.0
+            if (env.ApplicationName == Environments.Development)
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseCors(builder =>
+                            builder
+                            .WithOrigins("http://localhost")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials()
+                            );
+            }
+            else
+            {
+                app.UseHsts();
+            }
+
+
             //if (env.IsDevelopment())
             //{
             //    app.UseDeveloperExceptionPage();

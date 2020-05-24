@@ -25,13 +25,14 @@ namespace CRMSystem.Infrastructure
 
             try
             {
-                var sale = await _context.Sales.ToListAsync();
+                var sale = await _context.Sales.Include(y => y.Invoice).Include(y => y.Cart).ThenInclude(a => a.Items).ToListAsync();
+
                 return sale;
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
+            } 
 
 
         }
@@ -46,7 +47,7 @@ namespace CRMSystem.Infrastructure
         {
             try
             {
-                var sale = await _context.Sales.Where(x => x.ID == ID).FirstOrDefaultAsync();
+                var sale = await _context.Sales.Include(y=>y.Invoice).Include(y=>y.Cart).ThenInclude(a=>a.Items).Where(x => x.ID == ID).FirstOrDefaultAsync();
                 return sale;
             }
             catch (Exception ex)
