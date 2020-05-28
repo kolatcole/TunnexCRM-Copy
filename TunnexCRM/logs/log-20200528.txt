@@ -1,0 +1,158 @@
+2020-05-28 04:56:59.542 +01:00 [Information] User profile is available. Using '"C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-28 04:57:01.505 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/values  
+2020-05-28 04:57:01.999 +01:00 [Information] Request finished in 497.2418ms 404 
+2020-05-28 04:57:15.696 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger  
+2020-05-28 04:57:15.718 +01:00 [Information] Request finished in 19.913ms 301 
+2020-05-28 04:57:15.742 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/index.html  
+2020-05-28 04:57:15.814 +01:00 [Information] Request finished in 60.8093ms 200 text/html;charset=utf-8
+2020-05-28 04:57:15.820 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/swagger-ui-bundle.js  
+2020-05-28 04:57:15.822 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/swagger-ui.css  
+2020-05-28 04:57:15.823 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js  
+2020-05-28 04:57:16.037 +01:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2020-05-28 04:57:16.083 +01:00 [Information] Request finished in 227.7738ms 200 text/css
+2020-05-28 04:57:16.154 +01:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2020-05-28 04:57:16.156 +01:00 [Information] Request finished in 334.2234ms 200 application/javascript
+2020-05-28 04:57:16.456 +01:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2020-05-28 04:57:16.461 +01:00 [Information] Request finished in 649.5553ms 200 application/javascript
+2020-05-28 04:57:17.042 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/v1/swagger.json  
+2020-05-28 04:57:17.615 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-bundle.js.map  
+2020-05-28 04:57:17.672 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js.map  
+2020-05-28 04:57:17.688 +01:00 [Information] Request finished in 9.2488ms 404 
+2020-05-28 04:57:17.692 +01:00 [Information] Request finished in 98.1135ms 404 
+2020-05-28 04:57:17.909 +01:00 [Information] Request finished in 866.6307ms 200 application/json;charset=utf-8
+2020-05-28 04:57:35.567 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/Invoice/GetDebtorsList  
+2020-05-28 04:57:35.787 +01:00 [Information] Route matched with "{action = \"GetDebtorsList\", controller = \"Invoice\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDebtorsList()" on controller "CRMSystem.Presentation.Core.Controllers.InvoiceController" ("CRMSystem.Presentation.Core").
+2020-05-28 04:57:45.021 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.025 +01:00 [Warning] No type was specified for the decimal column '"AmountPaid"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.028 +01:00 [Warning] No type was specified for the decimal column '"Balance"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.031 +01:00 [Warning] No type was specified for the decimal column '"Discount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.039 +01:00 [Warning] No type was specified for the decimal column '"Tax"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.044 +01:00 [Warning] No type was specified for the decimal column '"TaxPercent"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.047 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.057 +01:00 [Warning] No type was specified for the decimal column '"Quantity"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.061 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Payment"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.064 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.072 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.077 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.081 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 04:57:45.240 +01:00 [Information] Entity Framework Core "3.1.4" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-28 04:57:51.867 +01:00 [Information] Executed DbCommand ("2,496"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [i].[ID], [i].[Amount], [i].[AmountPaid], [i].[Balance], [i].[CartID], [i].[CashierID], [i].[CustomerID], [i].[DateCreated], [i].[DateModified], [i].[Discount], [i].[ExtData], [i].[InvoiceDate], [i].[InvoiceNo], [i].[IsPaid], [i].[Tax], [i].[TaxInclusive], [i].[TaxName], [i].[TaxPercent], [i].[UserCreated], [i].[UserModified]
+FROM [Invoices] AS [i]
+WHERE [i].[Balance] <> 0.0"
+2020-05-28 04:57:52.206 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[CRMSystem.Domains.Invoice, CRMSystem.Domains.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2020-05-28 04:57:52.306 +01:00 [Information] Executed action "CRMSystem.Presentation.Core.Controllers.InvoiceController.GetDebtorsList (CRMSystem.Presentation.Core)" in 16503.8669ms
+2020-05-28 04:57:52.313 +01:00 [Information] Request finished in 16752.6795ms 200 application/json; charset=utf-8
+2020-05-28 04:59:43.934 +01:00 [Information] User profile is available. Using '"C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-28 04:59:44.277 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/values  
+2020-05-28 04:59:44.499 +01:00 [Information] Request finished in 228.5784ms 404 
+2020-05-28 04:59:53.696 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger  
+2020-05-28 04:59:53.724 +01:00 [Information] Request finished in 40.7617ms 301 
+2020-05-28 04:59:53.731 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/index.html  
+2020-05-28 04:59:53.802 +01:00 [Information] Request finished in 54.6806ms 200 text/html;charset=utf-8
+2020-05-28 04:59:54.334 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js.map  
+2020-05-28 04:59:54.353 +01:00 [Information] Request finished in 19.2017ms 404 
+2020-05-28 04:59:54.397 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/v1/swagger.json  
+2020-05-28 04:59:54.420 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-bundle.js.map  
+2020-05-28 04:59:54.424 +01:00 [Information] Request finished in 3.2849ms 404 
+2020-05-28 04:59:54.640 +01:00 [Information] Request finished in 244.8208ms 200 application/json;charset=utf-8
+2020-05-28 05:00:19.453 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/Customer/GetAllCustomers  
+2020-05-28 05:00:19.518 +01:00 [Information] Route matched with "{action = \"GetAllCustomers\", controller = \"Customer\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCustomers()" on controller "CRMSystem.Presentation.CustomerController" ("CRMSystem.Presentation.Core").
+2020-05-28 05:00:20.550 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.553 +01:00 [Warning] No type was specified for the decimal column '"AmountPaid"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.555 +01:00 [Warning] No type was specified for the decimal column '"Balance"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.558 +01:00 [Warning] No type was specified for the decimal column '"Discount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.561 +01:00 [Warning] No type was specified for the decimal column '"Tax"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.564 +01:00 [Warning] No type was specified for the decimal column '"TaxPercent"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.569 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.572 +01:00 [Warning] No type was specified for the decimal column '"Quantity"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.574 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Payment"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.577 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.581 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.585 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.588 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-28 05:00:20.656 +01:00 [Information] Entity Framework Core "3.1.4" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-28 05:00:21.612 +01:00 [Information] Executed DbCommand ("136"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ID], [c].[Address], [c].[DateCreated], [c].[DateModified], [c].[Email], [c].[FirstName], [c].[Gender], [c].[Image], [c].[LastName], [c].[Phone], [c].[UserCreated], [c].[UserModified]
+FROM [Customers] AS [c]"
+2020-05-28 05:00:21.801 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[CRMSystem.Domains.Customer, CRMSystem.Domains.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2020-05-28 05:00:21.838 +01:00 [Information] Executed action "CRMSystem.Presentation.CustomerController.GetAllCustomers (CRMSystem.Presentation.Core)" in 2302.9743ms
+2020-05-28 05:00:21.851 +01:00 [Information] Request finished in 2398.3354ms 200 application/json; charset=utf-8
+2020-05-28 05:00:59.914 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/Sale/GetSalesByCustomerID/1  
+2020-05-28 05:01:00.027 +01:00 [Information] Route matched with "{action = \"GetSalesByCustomerID\", controller = \"Sale\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSalesByCustomerID(Int32)" on controller "CRMSystem.Presentation.SaleController" ("CRMSystem.Presentation.Core").
+2020-05-28 05:01:04.821 +01:00 [Information] Entity Framework Core "3.1.4" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-28 05:01:05.651 +01:00 [Information] Executed DbCommand ("423"ms) [Parameters=["@__customerID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[ID], [s].[CartID], [s].[CustomerID], [s].[DateCreated], [s].[DateModified], [s].[InvoiceID], [s].[UserCreated], [s].[UserModified], [i].[ID], [i].[Amount], [i].[AmountPaid], [i].[Balance], [i].[CartID], [i].[CashierID], [i].[CustomerID], [i].[DateCreated], [i].[DateModified], [i].[Discount], [i].[ExtData], [i].[InvoiceDate], [i].[InvoiceNo], [i].[IsPaid], [i].[Tax], [i].[TaxInclusive], [i].[TaxName], [i].[TaxPercent], [i].[UserCreated], [i].[UserModified], [c].[ID], [c].[Amount], [c].[Code], [c].[DateCreated], [c].[DateModified], [c].[UserCreated], [c].[UserModified], [i0].[ID], [i0].[Amount], [i0].[CartID], [i0].[Code], [i0].[Name], [i0].[ProductID], [i0].[Quantity]
+FROM [Sales] AS [s]
+INNER JOIN [Invoices] AS [i] ON [s].[InvoiceID] = [i].[ID]
+INNER JOIN [Carts] AS [c] ON [s].[CartID] = [c].[ID]
+LEFT JOIN [Items] AS [i0] ON [c].[ID] = [i0].[CartID]
+WHERE [s].[CustomerID] = @__customerID_0
+ORDER BY [s].[ID], [i].[ID], [c].[ID], [i0].[ID]"
+2020-05-28 05:01:06.017 +01:00 [Information] Executed DbCommand ("59"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] IS NULL"
+2020-05-28 05:01:06.045 +01:00 [Information] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] IS NULL"
+2020-05-28 05:01:06.051 +01:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] IS NULL"
+2020-05-28 05:01:06.092 +01:00 [Information] Executed DbCommand ("31"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.107 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.114 +01:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.119 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.126 +01:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.131 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.134 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.140 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.148 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.161 +01:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.166 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.174 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.181 +01:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__invNo_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[Amount], [p].[CustomerID], [p].[DatePaid], [p].[InvoiceNo], [p].[Method], [p].[Reference], [p].[SaleID], [p].[UserCreated]
+FROM [Payments] AS [p]
+WHERE [p].[InvoiceNo] = @__invNo_0"
+2020-05-28 05:01:06.186 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[CRMSystem.Domains.Sale, CRMSystem.Domains.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2020-05-28 05:01:06.231 +01:00 [Information] Executed action "CRMSystem.Presentation.SaleController.GetSalesByCustomerID (CRMSystem.Presentation.Core)" in 6198.9334ms
+2020-05-28 05:01:06.236 +01:00 [Information] Request finished in 6326.6122ms 200 application/json; charset=utf-8

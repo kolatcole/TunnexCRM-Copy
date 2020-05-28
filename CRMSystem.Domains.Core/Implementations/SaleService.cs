@@ -112,6 +112,17 @@ namespace CRMSystem.Domains
 
             return SID;
         }
+        public async Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
+        {
+            var sales = await _repo.getByCustomerIDAsync(customerID);
+
+            foreach (var sale in sales)
+            {
+                sale.Payment = await _payRepo.getPaymentByInvoiceNo(sale.Invoice.InvoiceNo);
+            }
+            
+            return sales;
+        }
         public async Task<Sale> GetSaleByIDAsync(int ID)
         {
             var sale = await _repo.getAsync(ID);

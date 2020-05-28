@@ -38,6 +38,11 @@ namespace CRMSystem.Infrastructure
             return cart;
         }
 
+        public Task<List<Cart>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> insertAsync(Cart data)
         {
             var cart = new Cart();

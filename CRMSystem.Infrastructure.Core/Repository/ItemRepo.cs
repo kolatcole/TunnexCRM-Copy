@@ -50,6 +50,11 @@ namespace CRMSystem.Infrastructure
 
         }
 
+        public Task<List<Item>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> insertAsync(Item data)
         {
             var item = new Item();

@@ -38,6 +38,11 @@ namespace CRMSystem.Infrastructure
             return message;
         }
 
+        public Task<List<Message>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> insertAsync(Message data)
         {
             var message = new Message();

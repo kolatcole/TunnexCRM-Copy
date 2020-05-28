@@ -49,6 +49,11 @@ namespace CRMSystem.Infrastructure
 
         }
 
+        public Task<List<User>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<User> GetUserByNameandPassword(string username, string password)
         {
             User user = null;   

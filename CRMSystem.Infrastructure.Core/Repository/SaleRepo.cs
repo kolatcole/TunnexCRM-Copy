@@ -58,6 +58,20 @@ namespace CRMSystem.Infrastructure
 
         }
 
+        public async Task<List<Sale>> getByCustomerIDAsync(int customerID)
+        {
+            try
+            {
+                var sales = await _context.Sales.Include(y => y.Invoice).Include(y => y.Cart).ThenInclude(a => a.Items).Where(x => x.CustomerID == customerID).ToListAsync();
+                return sales;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public async Task<int> insertAsync(Sale data)
         {
 

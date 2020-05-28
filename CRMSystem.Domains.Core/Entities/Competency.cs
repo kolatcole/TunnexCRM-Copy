@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CRMSystem.Domains.Core.Entities
+namespace CRMSystem.Domains
 {
-    class Competency
+    public class Competency
     {
+
     }
 }

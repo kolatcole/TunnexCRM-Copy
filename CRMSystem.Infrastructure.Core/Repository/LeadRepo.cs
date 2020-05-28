@@ -38,6 +38,11 @@ namespace CRMSystem.Infrastructure
             return lead;
         }
 
+        public Task<List<Lead>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> insertAsync(Lead data)
         {
             var lead = new Lead();

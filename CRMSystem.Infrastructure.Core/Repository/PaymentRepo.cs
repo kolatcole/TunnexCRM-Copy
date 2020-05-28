@@ -51,6 +51,11 @@ namespace CRMSystem.Infrastructure
 
         }
 
+        public Task<List<Payment>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<Payment>> getPaymentByInvoiceNo(string invNo)
         {
             var payments = await _context.Payments.Where(x => x.InvoiceNo == invNo).ToListAsync();
