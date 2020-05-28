@@ -14,6 +14,6 @@ namespace CRMSystem.Domains
 
         Task<List<Invoice>> getByCustomerIDAsync(int customerID);
 
-
+        Task<List<Invoice>> getAllDebtorsAsync();
     }
 }

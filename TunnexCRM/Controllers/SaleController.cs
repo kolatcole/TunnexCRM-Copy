@@ -51,5 +51,18 @@ namespace CRMSystem.Presentation
             return Ok(result);
 
         }
+
+        /// <summary>
+        /// Fetch All Customer Sales Record
+        /// </summary>
+        /// <param name="customerID"></param>
+        /// <returns></returns>
+        [HttpGet("GetSalesByCustomerID/{customerID}")]
+        public async Task<IActionResult> GetSalesByCustomerID(int customerID)
+        {
+            var result = await _service.GetSalesByCustomerIDAsync(customerID);
+            return Ok(result);
+
+        }
     }
 }

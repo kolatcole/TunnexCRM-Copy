@@ -10,5 +10,6 @@ namespace CRMSystem.Domains
         Task<int> Save(Sale data);
         Task<Sale> GetSaleByIDAsync(int ID);
         Task<List<Sale>> GetAllSalesAsync();
+        Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID);
     }
 }

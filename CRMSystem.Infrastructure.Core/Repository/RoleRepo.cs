@@ -50,6 +50,11 @@ namespace CRMSystem.Infrastructure
                
         }
 
+        public Task<List<Role>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> insertAsync(Role data)
         {
             var role = new Role();

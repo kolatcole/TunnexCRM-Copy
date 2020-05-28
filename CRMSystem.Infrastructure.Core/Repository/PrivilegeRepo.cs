@@ -29,6 +29,11 @@ namespace CRMSystem.Infrastructure
             throw new NotImplementedException();
         }
 
+        public Task<List<Privilege>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> insertAsync(Privilege data)
         {
             var privilege = new Privilege();

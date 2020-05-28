@@ -162,5 +162,18 @@ namespace CRMSystem.Infrastructure
             }
             return invoice.ID;
         }
+        public async Task<List<Invoice>> getAllDebtorsAsync()
+        {
+
+            try
+            {
+                var invoices = await _context.Invoices.Where(x => x.Balance != 0).ToListAsync();
+                return invoices;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
