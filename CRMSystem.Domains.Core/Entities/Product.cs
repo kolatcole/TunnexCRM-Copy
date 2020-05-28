@@ -12,7 +12,9 @@ namespace CRMSystem.Domains
         public string Image { get; set; }
         public decimal CostPrice { get; set; }
         public decimal SalePrice { get; set; }
-        //public int PriceID { get; set; }
+
+        public int TotalSold { get; set; }
+        public int StockLevel { get; set; }
         //public Price Price { get; set; }
     }
 }

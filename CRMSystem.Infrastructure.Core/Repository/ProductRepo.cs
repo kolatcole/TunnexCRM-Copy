@@ -67,7 +67,8 @@ namespace CRMSystem.Infrastructure
                         Name=data.Name,
                         Quantity=data.Quantity,
                         SalePrice=data.SalePrice,
-                        CostPrice=data.CostPrice
+                        CostPrice=data.CostPrice,
+                        TotalSold=data.TotalSold
                     };
                     await _context.Products.AddAsync(product);
                     await _context.SaveChangesAsync();
@@ -88,7 +89,7 @@ namespace CRMSystem.Infrastructure
 
         public async Task<int> updateAsync(Product data)
         {
-            int ID = 0;
+            
             var newProduct = await _context.Products.FindAsync(data.ID);
             try
             {
@@ -101,10 +102,11 @@ namespace CRMSystem.Infrastructure
                     newProduct.Image = data.Image;
                     newProduct.SalePrice = data.SalePrice;
                     newProduct.CostPrice = data.CostPrice;
+                    newProduct.TotalSold = data.TotalSold;
 
 
                     _context.Products.Update(newProduct);
-                    ID = await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
                 }
 
             }
@@ -112,7 +114,7 @@ namespace CRMSystem.Infrastructure
             {
                 throw ex;
             }
-            return ID;
+            return newProduct.ID;
         }
     }
 }
