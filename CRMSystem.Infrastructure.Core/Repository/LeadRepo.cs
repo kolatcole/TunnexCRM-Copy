@@ -16,6 +16,7 @@ namespace CRMSystem.Infrastructure
             _context = context;
         }
 
+        
         public Task<int> deleteAsync(Lead data)
         {
             throw new NotImplementedException();
