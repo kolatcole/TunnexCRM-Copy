@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRMSystem.Infrastructure
 {
-    public class ProductRepo : IRepo<Product>
+    public class ProductRepo : IRepo<Product>, IProductRepo
     {
         private readonly TContext _context;
         public ProductRepo(TContext context)
@@ -54,6 +54,19 @@ namespace CRMSystem.Infrastructure
         public Task<List<Product>> getByCustomerIDAsync(int customerID)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<Product>> GetTopSellingProducts()
+        {
+            try
+            {
+                var products = await _context.Products.OrderByDescending(x => x.TotalSold).Take(5).ToListAsync();
+                return products;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<int> insertAsync(Product data)

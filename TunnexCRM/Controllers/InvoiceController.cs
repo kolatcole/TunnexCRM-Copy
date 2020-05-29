@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using CRMSystem.Domains;
@@ -22,10 +23,38 @@ namespace CRMSystem.Presentation.Core.Controllers
         /// Debtor's List
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GetDebtorsList")]
-        public async Task<IActionResult> GetDebtorsList()
+        [HttpGet("GetDebtorsList/{startDate}/{endDate}")]
+        public async Task<IActionResult> GetDebtorsList(string startDate,string endDate)
         {
-            var result = await _service.getDebtorInvoice();
+
+            
+
+            DateTime.TryParseExact(startDate, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime sDate);
+            DateTime.TryParseExact(endDate, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime eDate);
+
+            //if (sDate <= DateTime.MinValue)
+            //   sDate = D
+
+            if (eDate <= DateTime.MinValue)
+                eDate = DateTime.Now;
+            //else
+            //    eDate = eDate.
+
+            var result = await _service.getDebtorInvoice(sDate,eDate);
+            return Ok(result);
+        }
+
+        [HttpGet("GetLastNumber")]
+        public async Task<IActionResult> GetLastNumber()
+        {
+            var result = await _service.getLastAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("GetInvoice/{InvNumber}/{customerID}")]
+        public async Task<IActionResult> GetInvoice(string InvNumber, int customerID)
+        {
+            var result = await _service.GetInvoiceByNumber(InvNumber, customerID);
             return Ok(result);
         }
     }

@@ -13,6 +13,6 @@ namespace CRMSystem.Domains
         Task<int> getLastAsync();
 
         Task<int> updateAsync(Invoice data);
-        Task<List<Invoice>> getDebtorInvoice();
+        Task<List<Invoice>> getDebtorInvoice(DateTime startdate, DateTime enddate);
     }
 }

@@ -13,9 +13,11 @@ namespace CRMSystem.Presentation
     public class CustomerController : ControllerBase
     {
         private readonly IRepo<Customer> _repo;
-        public CustomerController(IRepo<Customer> repo)
+        private readonly ICustomerRepo _cRepo;
+        public CustomerController(IRepo<Customer> repo, ICustomerRepo cRepo)
         {
             _repo = repo;
+            _cRepo = cRepo;
         }
         /// <summary>
         /// 
@@ -62,6 +64,13 @@ namespace CRMSystem.Presentation
         public async Task<IActionResult> GetAllCustomers()
         {
             var result = await _repo.getAllAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("MostFrequentCustomers")]
+        public async Task<IActionResult> MostFrequent()
+        {
+            var result = await _cRepo.MostFrequentCustomer();
             return Ok(result);
         }
     }

@@ -51,9 +51,9 @@ namespace CRMSystem.Domains
             var result = await _inRepo.updateAsync(data);
             return result;
         }
-        public async Task<List<Invoice>> getDebtorInvoice()
+        public async Task<List<Invoice>> getDebtorInvoice(DateTime startdate,DateTime enddate)
         {
-            var result = await _iRepo.getAllDebtorsAsync();
+            var result = await _iRepo.getAllDebtorsAsync(startdate,enddate);
             return result;
         }
     }

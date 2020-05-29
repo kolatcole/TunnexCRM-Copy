@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace CRMSystem.Infrastructure
 {
-    public class CustomerRepo : IRepo<Customer>
+    public class CustomerRepo : IRepo<Customer>, ICustomerRepo
     {
         private readonly TContext _context;
         public CustomerRepo(TContext context)
@@ -98,6 +98,21 @@ namespace CRMSystem.Infrastructure
         public Task<int> insertListAsync(List<Customer> data)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<Customer>> MostFrequentCustomer()
+        {
+            try
+            {
+                var customers = await _context.Customers.OrderByDescending(x => x.TotalSales).Take(10).ToListAsync();
+                return customers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+           // throw new NotImplementedException();
         }
 
         public async Task<int> updateAsync(Customer data)
