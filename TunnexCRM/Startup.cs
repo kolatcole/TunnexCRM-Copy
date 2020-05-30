@@ -32,14 +32,27 @@ namespace CRMSystem
         }
 
         public IConfiguration Configuration { get; }
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors(c=> {
-            //    c.AddPolicy("AllowOrigin", opt => opt.AllowAnyOrigin());
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", opt => opt.WithOrigins("https://tunnexcrm.netlify.app/"));
             //});
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("https://tunnexcrm.netlify.app").
+                                                    AllowAnyHeader()
+                                                  .AllowAnyMethod();
+                                  });
+            });
+
+           //services.AddCors();
             services.AddMvc(x => x.EnableEndpointRouting = false);
             services.AddSwaggerGen(opt =>
             {
@@ -51,7 +64,7 @@ namespace CRMSystem
             });
             services.AddDbContext<TContext>(opt =>
             {
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultTLocal"), b => b.MigrationsAssembly("CRMSystem.Presentation.Core"));
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("CRMSystem.Presentation.Core"));
             });
 
             services.AddScoped<IRepo<Lead>, LeadRepo>();
@@ -114,38 +127,46 @@ namespace CRMSystem
             //);
 
             // b4 3.0
-            if (env.ApplicationName == Environments.Development)
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseCors(builder =>
-                            builder
-                            .WithOrigins("http://localhost")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials()
-                            );
-            }
-            else
-            {
-                app.UseHsts();
-            }
-
-
-            //if (env.IsDevelopment())
+            //if (env.ApplicationName == Environments.Development)
             //{
             //    app.UseDeveloperExceptionPage();
-            //    app.UseCors(builder =>
-            //                builder
-            //                .WithOrigins("http://localhost")
-            //                .AllowAnyHeader()
-            //                .AllowAnyMethod()
-            //                .AllowCredentials()
-            //                );
+            //    app.UseCors(opt =>
+
+            //        opt.AllowAnyOrigin()
+            //        .AllowAnyHeader()
+            //        .AllowAnyMethod()
+            //        .AllowCredentials()
+            //    );
+
             //}
             //else
             //{
             //    app.UseHsts();
             //}
+
+
+            if (env.IsDevelopment())
+            {
+
+                app.UseDeveloperExceptionPage();
+                //app.UseCors(opt =>
+
+                //    opt.WithOrigins("https://tunnexcrm.netlify.app/")
+                //    .AllowAnyHeader()
+                //    .AllowAnyMethod()
+                //    .AllowCredentials()
+                //);
+
+            }
+
+            app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
             loggerFactory.AddSerilog(); // <-- enable Serilog Middleware
             var swaggerOpt = new SwaggerOpt();

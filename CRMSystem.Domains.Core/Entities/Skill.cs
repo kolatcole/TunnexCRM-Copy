@@ -4,8 +4,14 @@ using System.Text;
 
 namespace CRMSystem.Domains
 {
-    public class Skill
+    public class Skill:BaseEntity
     {
-        public int ID { get; set; }
+        public int CategoryID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int SAS { get; set; }
+        public int SKAS { get; set; }
+        public int IAS { get; set; }
+
     }
 }
