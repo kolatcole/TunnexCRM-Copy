@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CRMSystem.Domains
 {
-    public class Skill
+    public interface ILeadRepo
     {
-        public int ID { get; set; }
+        Task<bool> ConvertLeadtoCustomer(Lead data);
     }
 }

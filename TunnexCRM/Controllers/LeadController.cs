@@ -40,5 +40,13 @@ namespace CRMSystem.Presentation.Core.Controllers
             return Ok(result);
 
         }
+
+        [HttpPost("ConvertLeadToCustomer/{ID}")]
+        public async Task<IActionResult> ConvertLeadToCustomer(int ID)
+        {
+            var result = await _service.ConvertLeadtoCustomerAsync(ID);
+            return Ok(result);
+
+        }
     }
 }

@@ -12,13 +12,15 @@ namespace CRMSystem.Domains
         private readonly IInvoiceService _inService;
         private readonly IRepo<Payment> _pRepo;
         private readonly IPaymentRepo _payRepo;
-        public SaleService(IRepo<Sale> repo,  IInvoiceService inService, ICartService cService, IRepo<Payment> pRepo, IPaymentRepo payRepo)
+        private readonly IRepo<Customer> _custRepo;
+        public SaleService(IRepo<Sale> repo,  IInvoiceService inService, ICartService cService, IRepo<Payment> pRepo, IPaymentRepo payRepo, IRepo<Customer> custRepo)
         {
             _repo = repo;
             _cService = cService;
             _inService = inService;
             _pRepo=pRepo;
             _payRepo = payRepo;
+            _custRepo = custRepo;
         }
         public async Task<int> Save(Sale data)
         {
@@ -95,6 +97,17 @@ namespace CRMSystem.Domains
 
             var IID = await _inService.SaveInvoice(invoice);
 
+
+            // update customer 
+
+            var customer = new Customer
+            {
+                ID=data.CustomerID,
+                TotalSales=1
+            };
+
+            await _custRepo.updateAsync(customer);
+
             // save sale
 
             data.CartID = CID;
@@ -143,5 +156,17 @@ namespace CRMSystem.Domains
 
             return sales;
         }
+        public async Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
+        {
+            var sales = await _repo.getByCustomerIDAsync(customerID);
+
+            foreach (var sale in sales)
+            {
+                sale.Payment = await _payRepo.getPaymentByInvoiceNo(sale.Invoice.InvoiceNo);
+            }
+
+            return sales;
+        }
+
     }
 }

@@ -13,5 +13,6 @@ namespace CRMSystem.Domains
         Task<int> UpdateLeadAsync(Lead data);
         Task<Lead> getLeadByID(int ID);
         Task<List<Lead>> getAllLeads();
+        Task<int> ConvertLeadtoCustomerAsync(int ID);
     }
 }

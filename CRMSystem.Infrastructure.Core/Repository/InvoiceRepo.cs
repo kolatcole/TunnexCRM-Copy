@@ -64,7 +64,7 @@ namespace CRMSystem.Infrastructure
                 throw ex;
             }
 
-            
+            throw new NotImplementedException();
         }
 
         public async Task<List<Invoice>> getByCustomerIDAsync(int customerID)
@@ -87,8 +87,9 @@ namespace CRMSystem.Infrastructure
         {
             try
             {
-                var invoice = await _context.Invoices.LastAsync();
-                return invoice.ID;
+
+                var invoiceID = await _context.Invoices.OrderByDescending(x => x.ID).Select(y => y.ID).FirstAsync();
+                return invoiceID;
             }
             catch (Exception ex)
             {
@@ -162,13 +163,12 @@ namespace CRMSystem.Infrastructure
             }
             return invoice.ID;
         }
-
-        public async Task<List<Invoice>> getAllDebtorsAsync()
+        public async Task<List<Invoice>> getAllDebtorsAsync(DateTime startdate, DateTime enddate)
         {
-            
+           
             try
             {
-                var invoices = await _context.Invoices.Where(x => x.Balance != 0).ToListAsync();
+                var invoices = await _context.Invoices.Where(x => x.Balance != 0 && x.DateCreated>=startdate && x.DateCreated<enddate).ToListAsync();
                 return invoices;
             }
             catch (Exception ex)

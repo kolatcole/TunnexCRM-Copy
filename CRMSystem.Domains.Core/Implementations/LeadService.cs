@@ -9,10 +9,33 @@ namespace CRMSystem.Domains
     {
         private readonly IRepo<Lead> _lRepo;
         private readonly IRepo<Message> _mRepo;
-        public LeadService(IRepo<Lead> lRepo,IRepo<Message> mRepo)
+        private readonly IRepo<Customer> _cRepo;
+        public LeadService(IRepo<Lead> lRepo,IRepo<Message> mRepo, IRepo<Customer> cRepo)
         {
             _lRepo = lRepo;
             _mRepo = mRepo;
+            _cRepo = cRepo;
+        }
+
+        public async Task<int> ConvertLeadtoCustomerAsync(int ID)
+        {
+            var lead = await _lRepo.getAsync(ID);
+            var customer = new Customer
+            {
+                TotalSales=0,
+                Address= lead.Address,
+                DateCreated=DateTime.Now,
+                Email= lead.Email,
+                FirstName= lead.FirstName,
+                LastName= lead.LastName,
+                Gender= lead.Gender,
+                Image= lead.Image,
+                Phone= lead.Phone,
+                UserCreated= lead.UserCreated
+            };
+            var result=await _cRepo.insertAsync(customer);
+            return result;
+
         }
 
         public async Task<List<Lead>> getAllLeads()

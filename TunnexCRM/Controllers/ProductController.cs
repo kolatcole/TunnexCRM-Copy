@@ -13,9 +13,11 @@ namespace CRMSystem.Presentation
     public class ProductController : ControllerBase
     {
         private readonly IProductService _service;
-        public ProductController(IProductService service)
+        private readonly IProductRepo _pRepo;
+        public ProductController(IProductService service, IProductRepo pRepo)
         {
             _service = service;
+            _pRepo = pRepo;
             
         }
 
@@ -52,6 +54,13 @@ namespace CRMSystem.Presentation
         public async Task<IActionResult> GetAllProducts()
         {
             var result = await _service.GetAllProducts();
+            return Ok(result);
+        }
+
+        [HttpGet("BestSellingProducts")]
+        public async Task<IActionResult> BestSellingProducts()
+        {
+            var result = await _pRepo.GetTopSellingProducts();
             return Ok(result);
         }
     }

@@ -11,12 +11,14 @@ namespace CRMSystem.Domains
         private readonly IRepo<Item> _iRepo;
         private readonly IRepo<Cart> _cRepo;
         private readonly IRepo<Product> _pRepo;
+        private readonly IRepo<Product> _proRepo;
 
-        public CartService(IRepo<Item> iRepo, IRepo<Cart> cRepo, IRepo<Product> pRepo)
+        public CartService(IRepo<Item> iRepo, IRepo<Cart> cRepo, IRepo<Product> pRepo, IRepo<Product> proRepo)
         {
             _iRepo = iRepo;
             _cRepo = cRepo;
             _pRepo = pRepo;
+            _proRepo = proRepo;
         }
         public async Task<int> SaveCart(Cart data)
         {
@@ -35,6 +37,14 @@ namespace CRMSystem.Domains
                 item.Amount = item.Quantity * product.SalePrice;
                 amount += item.Amount;
                 item.Name = product.Name;
+
+                // mark up product by the amount bought and update
+
+                product.TotalSold += item.Quantity;
+                 product.Quantity -= item.Quantity;
+
+                await _proRepo.updateAsync(product);
+
 
                 items.Add(item);
             }

@@ -15,7 +15,7 @@ namespace CRMSystem.Domains
 
      //   public Product Product { get; set; }
 
-        public decimal Quantity { get; set; }
+        public int Quantity { get; set; }
 
         public decimal Amount { get; set; }
 

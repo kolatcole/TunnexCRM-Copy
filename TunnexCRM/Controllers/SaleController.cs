@@ -51,7 +51,6 @@ namespace CRMSystem.Presentation
             return Ok(result);
 
         }
-        
 
         /// <summary>
         /// Fetch All Customer Sales Record

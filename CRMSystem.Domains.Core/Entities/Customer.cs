@@ -14,5 +14,6 @@ namespace CRMSystem.Domains
         public string Phone { get; set; }
         public string Gender { get; set; }
         public string Image { get; set; }
+        public int TotalSales { get; set; }
     }
 }

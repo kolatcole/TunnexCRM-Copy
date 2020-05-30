@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace CRMSystem.Infrastructure
 {
-    public class CustomerRepo : IRepo<Customer>
+    public class CustomerRepo : IRepo<Customer>, ICustomerRepo
     {
         private readonly TContext _context;
         public CustomerRepo(TContext context)
@@ -22,8 +22,17 @@ namespace CRMSystem.Infrastructure
 
         public async Task<List<Customer>> getAllAsync()
         {
-            var customer = await _context.Customers.ToListAsync();
-            return customer;
+            try
+            {
+                var customer = await _context.Customers.ToListAsync();
+                return customer;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
         }
 
@@ -35,9 +44,23 @@ namespace CRMSystem.Infrastructure
 
         public async Task<Customer> getAsync(int ID)
         {
-            var customer = await _context.Customers.Where(x => x.ID == ID).FirstOrDefaultAsync();
-            return customer;
+            try
+            {
+                var customer = await _context.Customers.Where(x => x.ID == ID).FirstOrDefaultAsync();
+                return customer;
+            }
 
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+
+        }
+
+        public Task<List<Customer>> getByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<List<Customer>> getByCustomerIDAsync(int customerID)
@@ -62,7 +85,8 @@ namespace CRMSystem.Infrastructure
                         Gender=data.Gender,
                         Image=data.Image,
                         LastName=data.LastName,
-                        Phone=data.Phone
+                        Phone=data.Phone,
+                        TotalSales=data.TotalSales
                     };
                     await _context.Customers.AddAsync(customer);
                     await _context.SaveChangesAsync();
@@ -81,27 +105,71 @@ namespace CRMSystem.Infrastructure
             throw new NotImplementedException();
         }
 
+        public async Task<List<Customer>> MostFrequentCustomer()
+        {
+            try
+            {
+                var customers = await _context.Customers.OrderByDescending(x => x.TotalSales).Take(10).ToListAsync();
+                return customers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+           // throw new NotImplementedException();
+        }
+
         public async Task<int> updateAsync(Customer data)
         {
-            int ID = 0;
             var newCustomer = await _context.Customers.FindAsync(data.ID);
             try
             {
                 if (newCustomer != null)
                 {
-                    newCustomer.Image = data.Image;
-                    newCustomer.FirstName = data.FirstName;
-                    newCustomer.Phone = data.Phone;
-                    newCustomer.LastName = data.LastName;
-                    newCustomer.DateModified = DateTime.Now;
-                    newCustomer.UserModified = data.UserModified;
-                    newCustomer.Gender = data.Gender;
-                    newCustomer.Email = data.Email;
-                    newCustomer.Address = data.Address;
+                    //if(newCustomer.Image!=string.Empty)
+                    //    newCustomer.Image = data.Image;
+                    //if (newCustomer.FirstName != string.Empty)
+                    //    newCustomer.FirstName = data.FirstName;
+                    //if (newCustomer.Phone != string.Empty)
+                    //    newCustomer.Phone = data.Phone;
+                    //if (newCustomer.LastName != string.Empty)
+                    //    newCustomer.LastName = data.LastName;
+                    //     newCustomer.DateModified = DateTime.Now;
+                    //if (newCustomer.UserModified != 0)
+                    //    newCustomer.UserModified = data.UserModified;
+                    //if (newCustomer.Gender != string.Empty)
+                    //    newCustomer.Gender = data.Gender;
+                    //if (newCustomer.Email != string.Empty)
+                    //    newCustomer.Email = data.Email;
+                    //if (newCustomer.Address != string.Empty)
+                    //    newCustomer.Address = data.Address;
+                    //if (newCustomer.TotalSales != 0)
+                    //    newCustomer.TotalSales += data.TotalSales;
+
+                   
+                        newCustomer.Image = data.Image;
+                   
+                        newCustomer.FirstName = data.FirstName;
                     
+                        newCustomer.Phone = data.Phone;
+                   
+                        newCustomer.LastName = data.LastName;
+                    newCustomer.DateModified = DateTime.Now;
+                    
+                        newCustomer.UserModified = data.UserModified;
+                    
+                        newCustomer.Gender = data.Gender;
+                    
+                        newCustomer.Email = data.Email;
+                    
+                        newCustomer.Address = data.Address;
+                    
+                        newCustomer.TotalSales += data.TotalSales;
+
 
                     _context.Customers.Update(newCustomer);
-                    ID = await _context.SaveChangesAsync();
+                     await _context.SaveChangesAsync();
                 }
 
             }
