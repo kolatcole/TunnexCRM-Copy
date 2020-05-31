@@ -38,6 +38,10 @@ namespace CRMSystem.Infrastructure
         public DbSet<Lead> Leads { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet<Qualification> Qualifications { get; set; }
+        public DbSet<Assessment> Assessments { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
+        public DbSet<Competency> Competencies { get; set; }
 
     }
 }

@@ -1,0 +1,190 @@
+2020-05-31 07:04:06.851 +01:00 [Information] User profile is available. Using '"C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-31 07:04:09.629 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/values  
+2020-05-31 07:04:10.572 +01:00 [Information] Request finished in 883.1979ms 404 
+2020-05-31 07:04:26.890 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger  
+2020-05-31 07:04:26.942 +01:00 [Information] Request finished in 19.4854ms 301 
+2020-05-31 07:04:26.945 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/index.html  
+2020-05-31 07:04:27.185 +01:00 [Information] Request finished in 248.8672ms 200 text/html;charset=utf-8
+2020-05-31 07:04:27.220 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js  
+2020-05-31 07:04:27.222 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/swagger-ui.css  
+2020-05-31 07:04:27.230 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/swagger-ui-bundle.js  
+2020-05-31 07:04:27.579 +01:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2020-05-31 07:04:27.587 +01:00 [Information] Request finished in 372.8849ms 200 text/css
+2020-05-31 07:04:27.621 +01:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2020-05-31 07:04:27.627 +01:00 [Information] Request finished in 414.4034ms 200 application/javascript
+2020-05-31 07:04:27.915 +01:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2020-05-31 07:04:27.920 +01:00 [Information] Request finished in 703.9144ms 200 application/javascript
+2020-05-31 07:04:28.699 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/v1/swagger.json  
+2020-05-31 07:04:29.378 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-bundle.js.map  
+2020-05-31 07:04:29.389 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js.map  
+2020-05-31 07:04:29.397 +01:00 [Information] Request finished in 16.9666ms 404 
+2020-05-31 07:04:29.400 +01:00 [Information] Request finished in 10.4644ms 404 
+2020-05-31 07:04:29.415 +01:00 [Information] Request finished in 714.7886ms 200 application/json;charset=utf-8
+2020-05-31 07:04:48.639 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/Customer/MostFrequentCustomers  
+2020-05-31 07:04:48.681 +01:00 [Information] Executing endpoint '"CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)"'
+2020-05-31 07:04:48.886 +01:00 [Information] Route matched with "{action = \"MostFrequent\", controller = \"Customer\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MostFrequent()" on controller "CRMSystem.Presentation.CustomerController" ("CRMSystem.Presentation.Core").
+2020-05-31 07:04:52.629 +01:00 [Information] Executed action "CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)" in 3716.7727ms
+2020-05-31 07:04:52.653 +01:00 [Information] Executed endpoint '"CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)"'
+2020-05-31 07:04:53.755 +01:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Competency' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at CRMSystem.Infrastructure.CustomerRepo.MostFrequentCustomer() in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Infrastructure.Core\Repository\CustomerRepo.cs:line 112
+   at CRMSystem.Presentation.CustomerController.MostFrequent() in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\TunnexCRM\Controllers\CustomerController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-31 07:04:53.817 +01:00 [Information] Request finished in 5195.422ms 500 text/plain
+2020-05-31 07:06:38.295 +01:00 [Information] User profile is available. Using '"C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-31 07:06:38.818 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/values  
+2020-05-31 07:06:39.108 +01:00 [Information] Request finished in 303.9608ms 404 
+2020-05-31 07:06:54.403 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger  
+2020-05-31 07:06:54.435 +01:00 [Information] Request finished in 16.3821ms 301 
+2020-05-31 07:06:54.447 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/index.html  
+2020-05-31 07:06:54.628 +01:00 [Information] Request finished in 135.1493ms 200 text/html;charset=utf-8
+2020-05-31 07:06:55.431 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-bundle.js.map  
+2020-05-31 07:06:55.490 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js.map  
+2020-05-31 07:06:55.503 +01:00 [Information] Request finished in 37.1966ms 404 
+2020-05-31 07:06:55.505 +01:00 [Information] Request finished in 72.1678ms 404 
+2020-05-31 07:06:55.537 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/v1/swagger.json  
+2020-05-31 07:06:55.793 +01:00 [Information] Request finished in 257.5855ms 200 application/json;charset=utf-8
+2020-05-31 07:07:01.679 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/Customer/MostFrequentCustomers  
+2020-05-31 07:07:01.731 +01:00 [Information] Executing endpoint '"CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)"'
+2020-05-31 07:07:01.829 +01:00 [Information] Route matched with "{action = \"MostFrequent\", controller = \"Customer\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MostFrequent()" on controller "CRMSystem.Presentation.CustomerController" ("CRMSystem.Presentation.Core").
+2020-05-31 07:07:04.340 +01:00 [Information] Executed action "CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)" in 2486.3481ms
+2020-05-31 07:07:04.349 +01:00 [Information] Executed endpoint '"CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)"'
+2020-05-31 07:07:04.547 +01:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Competency' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at CRMSystem.Infrastructure.CustomerRepo.MostFrequentCustomer() in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Infrastructure.Core\Repository\CustomerRepo.cs:line 112
+   at CRMSystem.Presentation.CustomerController.MostFrequent() in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\TunnexCRM\Controllers\CustomerController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-31 07:07:04.578 +01:00 [Information] Request finished in 2911.4251ms 500 text/plain
+2020-05-31 07:07:42.697 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/Lead/GetAllLeads  
+2020-05-31 07:07:42.708 +01:00 [Information] Executing endpoint '"CRMSystem.Presentation.Core.Controllers.LeadController.GetAllLeads (CRMSystem.Presentation.Core)"'
+2020-05-31 07:07:42.793 +01:00 [Information] Route matched with "{action = \"GetAllLeads\", controller = \"Lead\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllLeads()" on controller "CRMSystem.Presentation.Core.Controllers.LeadController" ("CRMSystem.Presentation.Core").
+2020-05-31 07:07:42.922 +01:00 [Information] Executed action "CRMSystem.Presentation.Core.Controllers.LeadController.GetAllLeads (CRMSystem.Presentation.Core)" in 126.3933ms
+2020-05-31 07:07:42.927 +01:00 [Information] Executed endpoint '"CRMSystem.Presentation.Core.Controllers.LeadController.GetAllLeads (CRMSystem.Presentation.Core)"'
+2020-05-31 07:07:43.298 +01:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Competency' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.Include[TEntity,TProperty](IQueryable`1 source, Expression`1 navigationPropertyPath)
+   at CRMSystem.Infrastructure.LeadRepo.getAllAsync() in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Infrastructure.Core\Repository\LeadRepo.cs:line 27
+   at CRMSystem.Domains.LeadService.getAllLeads() in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\CRMSystem.Domains.Core\Implementations\LeadService.cs:line 43
+   at CRMSystem.Presentation.Core.Controllers.LeadController.GetAllLeads() in C:\Users\PC\Source\Repos\kolatcole\TunnexCRM\TunnexCRM\Controllers\LeadController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-31 07:07:43.316 +01:00 [Information] Request finished in 616.1154ms 500 text/plain
+2020-05-31 07:08:48.871 +01:00 [Information] User profile is available. Using '"C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-31 07:08:49.370 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/values  
+2020-05-31 07:08:49.577 +01:00 [Information] Request finished in 215.697ms 404 
+2020-05-31 07:09:01.451 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger  
+2020-05-31 07:09:01.467 +01:00 [Information] Request finished in 12.7137ms 301 
+2020-05-31 07:09:01.474 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/index.html  
+2020-05-31 07:09:01.579 +01:00 [Information] Request finished in 98.3263ms 200 text/html;charset=utf-8
+2020-05-31 07:09:02.229 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-bundle.js.map  
+2020-05-31 07:09:02.288 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js.map  
+2020-05-31 07:09:02.298 +01:00 [Information] Request finished in 76.0842ms 404 
+2020-05-31 07:09:02.301 +01:00 [Information] Request finished in 14.8568ms 404 
+2020-05-31 07:09:02.499 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/v1/swagger.json  
+2020-05-31 07:09:02.788 +01:00 [Information] Request finished in 305.5651ms 200 application/json;charset=utf-8
+2020-05-31 07:09:15.997 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/Customer/MostFrequentCustomers  
+2020-05-31 07:09:16.013 +01:00 [Information] Executing endpoint '"CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)"'
+2020-05-31 07:09:16.092 +01:00 [Information] Route matched with "{action = \"MostFrequent\", controller = \"Customer\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MostFrequent()" on controller "CRMSystem.Presentation.CustomerController" ("CRMSystem.Presentation.Core").
+2020-05-31 07:09:17.936 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.939 +01:00 [Warning] No type was specified for the decimal column '"AmountPaid"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.947 +01:00 [Warning] No type was specified for the decimal column '"Balance"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.950 +01:00 [Warning] No type was specified for the decimal column '"Discount"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.955 +01:00 [Warning] No type was specified for the decimal column '"Tax"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.963 +01:00 [Warning] No type was specified for the decimal column '"TaxPercent"' on entity type '"Invoice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.967 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Item"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.971 +01:00 [Warning] No type was specified for the decimal column '"Amount"' on entity type '"Payment"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.978 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.984 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Price"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:17.996 +01:00 [Warning] No type was specified for the decimal column '"CostPrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:18.003 +01:00 [Warning] No type was specified for the decimal column '"SalePrice"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-31 07:09:18.176 +01:00 [Information] Entity Framework Core "3.1.4" initialized '"TContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=CRMSystem.Presentation.Core "
+2020-05-31 07:09:25.453 +01:00 [Information] Executed DbCommand ("1,882"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [c].[ID], [c].[Address], [c].[DateCreated], [c].[DateModified], [c].[Email], [c].[FirstName], [c].[Gender], [c].[Image], [c].[LastName], [c].[Phone], [c].[TotalSales], [c].[UserCreated], [c].[UserModified]
+FROM [Customers] AS [c]
+ORDER BY [c].[TotalSales] DESC"
+2020-05-31 07:09:25.712 +01:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[CRMSystem.Domains.Customer, CRMSystem.Domains.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2020-05-31 07:09:25.808 +01:00 [Information] Executed action "CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)" in 9684.7981ms
+2020-05-31 07:09:25.818 +01:00 [Information] Executed endpoint '"CRMSystem.Presentation.CustomerController.MostFrequent (CRMSystem.Presentation.Core)"'
+2020-05-31 07:09:25.832 +01:00 [Information] Request finished in 9832.6145ms 200 application/json; charset=utf-8
