@@ -85,6 +85,10 @@ namespace CRMSystem
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IProductRepo, ProductRepo>();
             services.AddScoped<ICustomerRepo, CustomerRepo>();
+            services.AddScoped<ISaleRepo, SaleRepo>();
+            services.AddScoped<IRepo<Skill>, SkillRepo>();
+            services.AddScoped<IRepo<Staff>, StaffRepo>();
+            services.AddScoped<IRepo<Qualification>, QualificationRepo>();
 
 
 

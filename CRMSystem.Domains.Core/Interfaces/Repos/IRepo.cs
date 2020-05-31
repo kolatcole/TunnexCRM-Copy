@@ -13,7 +13,7 @@ namespace CRMSystem.Domains
         Task<int> updateAsync(T data);
         Task<T> getAsync(int ID);
         Task<List<T>> getAllAsync();
-        Task<List<T>> getByCustomerIDAsync(int customerID);
+       
         // Task<List<T>> getAllByIDAsync(int ID);
 
 

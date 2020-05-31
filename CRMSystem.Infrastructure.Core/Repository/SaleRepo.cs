@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRMSystem.Infrastructure
 {
-    public class SaleRepo : IRepo<Sale>
+    public class SaleRepo : IRepo<Sale>,ISaleRepo
     {
         private readonly TContext _context;
         public SaleRepo(TContext context)

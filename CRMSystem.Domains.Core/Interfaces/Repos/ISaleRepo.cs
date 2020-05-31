@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace CRMSystem.Domains
 {
-    public interface ICustomerRepo
+    public interface ISaleRepo
     {
-        Task<List<Customer>> MostFrequentCustomer();
-        
+        Task<List<Sale>> getByCustomerIDAsync(int customerID);
     }
 }

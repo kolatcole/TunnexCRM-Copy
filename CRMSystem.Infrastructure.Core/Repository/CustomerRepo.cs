@@ -58,10 +58,7 @@ namespace CRMSystem.Infrastructure
 
         }
 
-        public Task<List<Customer>> getByCustomerIDAsync(int customerID)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public async Task<int> insertAsync(Customer data)
         {
@@ -122,26 +119,7 @@ namespace CRMSystem.Infrastructure
             {
                 if (newCustomer != null)
                 {
-                    //if(newCustomer.Image!=string.Empty)
-                    //    newCustomer.Image = data.Image;
-                    //if (newCustomer.FirstName != string.Empty)
-                    //    newCustomer.FirstName = data.FirstName;
-                    //if (newCustomer.Phone != string.Empty)
-                    //    newCustomer.Phone = data.Phone;
-                    //if (newCustomer.LastName != string.Empty)
-                    //    newCustomer.LastName = data.LastName;
-                    //     newCustomer.DateModified = DateTime.Now;
-                    //if (newCustomer.UserModified != 0)
-                    //    newCustomer.UserModified = data.UserModified;
-                    //if (newCustomer.Gender != string.Empty)
-                    //    newCustomer.Gender = data.Gender;
-                    //if (newCustomer.Email != string.Empty)
-                    //    newCustomer.Email = data.Email;
-                    //if (newCustomer.Address != string.Empty)
-                    //    newCustomer.Address = data.Address;
-                    //if (newCustomer.TotalSales != 0)
-                    //    newCustomer.TotalSales += data.TotalSales;
-
+                    
                    
                         newCustomer.Image = data.Image;
                    

@@ -12,11 +12,11 @@ namespace CRMSystem.Domains
         public string Gender { get; set; }
         public string Email { get; set; }
         public string HEL { get; set; }
+        public string Image { get; set; }
+        public string Phone { get; set; }
         public DateTime DateofBirth { get; set; }
-        public List<Skill> Skills { get; set; }
-        public int QualificationID { get; set; }
-        public Qualification Qualification { get; set; }
-       // public String[] Attachment { get; set; }
+        
+        public List<Qualification> Qualifications { get; set; }
 
 
     }
