@@ -29,19 +29,35 @@ namespace CRMSystem.Domains
         {
             var skill = await _sRepo.getAsync(data.ID);
 
-            var assessments = new List<Assessment>();
-            var comp = 0;
-            foreach (var assessment in data.Assessments)
+            if (data.Assessments != null)
             {
-                comp += assessment.SAS;
-                assessment.StaffSkillID = skill.ID;
-                await _aRepo.insertAsync(assessment);
+                var assessments = new List<Assessment>();
+                var comp = 0;
+                foreach (var assessment in data.Assessments)
+                {
+                    comp += assessment.SAS;
+                    assessment.StaffSkillID = data.ID;
+                    await _aRepo.insertAsync(assessment);
+                }
+                data.CompetencyValue = (comp*2) * 10;
+                data.CompetencyValue = (skill.CompetencyValue + data.CompetencyValue) / (skill.Assessments.Count);
             }
-            data.CompetencyValue = comp * 100;
 
-
+            
             var SID = await _sRepo.updateAsync(data);
             return SID;
+        }
+
+        public async Task<StaffSkill> GetStaffSkillByIDAsync(int ID) 
+        {
+            var skill = await _sRepo.getAsync(ID);
+            return skill;
+        }
+
+        public async Task<List<StaffSkill>> GetAllStaffSkillsAsync()
+        {
+            var skills = await _sRepo.getAllAsync();
+            return skills;
         }
     }
 }

@@ -89,6 +89,8 @@ namespace CRMSystem
             services.AddScoped<IRepo<Skill>, SkillRepo>();
             services.AddScoped<IRepo<Staff>, StaffRepo>();
             services.AddScoped<IRepo<Qualification>, QualificationRepo>();
+            services.AddScoped<IRepo<Assessment>, AssessmentRepo>();
+            services.AddScoped<IRepo<StaffSkill>, StaffSkillRepo>();
 
 
 
@@ -99,6 +101,7 @@ namespace CRMSystem
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IInvoiceService, InvoiceService>();
             services.AddTransient<ILeadService, LeadService>();
+            services.AddTransient<IStaffSkillService, StaffSkillService>();
 
         }
 

@@ -9,5 +9,7 @@ namespace CRMSystem.Domains
     {
         Task<int> SaveStaffSkill(StaffSkill data);
         Task<int> UpdateStaffSkillAsync(StaffSkill data);
+        Task<StaffSkill> GetStaffSkillByIDAsync(int ID);
+        Task<List<StaffSkill>> GetAllStaffSkillsAsync();
     }
 }

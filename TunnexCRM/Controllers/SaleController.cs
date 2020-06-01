@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using CRMSystem.Domains;
@@ -61,6 +62,21 @@ namespace CRMSystem.Presentation
         public async Task<IActionResult> GetSalesByCustomerID(int customerID)
         {
             var result = await _service.GetSalesByCustomerIDAsync(customerID);
+            return Ok(result);
+
+        }
+
+        [HttpGet("GetSalesByDate/{startdate}/{enddate}")]
+        public async Task<IActionResult> GetSalesByDate(string startdate,string enddate)
+        {
+
+
+            DateTime.TryParseExact(startdate, "dd-MM-yyyy", CultureInfo.InvariantCulture,DateTimeStyles.None, out DateTime sdate);
+            DateTime.TryParseExact(enddate, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime edate);
+            if (edate <= DateTime.MinValue)
+                edate = DateTime.Now;
+
+            var result = await _service.getSaleHistoryByDateAsync(sdate, edate);
             return Ok(result);
 
         }

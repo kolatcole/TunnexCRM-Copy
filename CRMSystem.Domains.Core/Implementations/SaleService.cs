@@ -160,5 +160,13 @@ namespace CRMSystem.Domains
             return sales;
         }
 
+        public async Task<List<Sale>> getSaleHistoryByDateAsync(DateTime startdate, DateTime enddate)
+        {
+            var sales = await _sRepo.getSaleHistoryByDate(startdate, enddate);
+            return sales;
+        
+        
+        }
+
     }
 }

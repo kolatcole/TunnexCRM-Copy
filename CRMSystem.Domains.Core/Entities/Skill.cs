@@ -24,8 +24,8 @@ namespace CRMSystem.Domains
         public List<Assessment> Assessments { get; set; }
         public int SupervisorID { get; set; }
 
-        [JsonIgnore]
-        public decimal CompetencyValue { get { return 0.00M; } set { } }
+      
+        public decimal CompetencyValue { get; set; }
     }
     public class Assessment
     {

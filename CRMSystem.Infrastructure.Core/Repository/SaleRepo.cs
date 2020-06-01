@@ -37,11 +37,18 @@ namespace CRMSystem.Infrastructure
 
         }
 
-        //public async Task<List<Sale>> getAllByIDAsync(int ID)
-        //{
-        //    var sales = await _context.Sales.Where(x => x.UserCreated == ID).ToListAsync();
-        //    return sales;
-        //}
+        public async Task<List<Sale>> getSaleHistoryByDate(DateTime startdate, DateTime enddate) 
+        {
+            try
+            {
+                var sales = await _context.Sales.Include(y => y.Invoice).Include(y => y.Cart).ThenInclude(a => a.Items).Where(x => x.DateCreated >= startdate && x.DateCreated < enddate).ToListAsync();
+                return sales;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public async Task<Sale> getAsync(int ID)
         {

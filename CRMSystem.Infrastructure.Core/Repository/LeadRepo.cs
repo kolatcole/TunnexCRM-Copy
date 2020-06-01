@@ -24,7 +24,7 @@ namespace CRMSystem.Infrastructure
 
         public async Task<List<Lead>> getAllAsync()
         {
-            var leads = await _context.Leads.Include(y => y.Message).ToListAsync();
+            var leads = await _context.Leads.Where(x => x.isCustomer == false).Include(y => y.Message).ToListAsync();
             return leads;
         }
 
@@ -35,7 +35,7 @@ namespace CRMSystem.Infrastructure
 
         public async Task<Lead> getAsync(int ID)
         {
-            var lead = await _context.Leads.Include(y=>y.Message).Where(x => x.ID == ID).FirstOrDefaultAsync();
+            var lead = await _context.Leads.Include(y=>y.Message).Where(x => x.ID == ID && x.isCustomer==false).FirstOrDefaultAsync();
             return lead;
         }
 
