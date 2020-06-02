@@ -62,7 +62,8 @@ namespace CRMSystem.Infrastructure
                         Image = data.Image,
                         LastName = data.LastName,
                         Phone = data.Phone,
-                        Company=data.Company
+                        Company=data.Company,
+                        isCustomer=false
                     };
                     await _context.Leads.AddAsync(lead);
                     await _context.SaveChangesAsync();
@@ -97,6 +98,7 @@ namespace CRMSystem.Infrastructure
                     lead.Gender = data.Gender;
                     lead.Email = data.Email;
                     lead.Address = data.Address;
+                    lead.isCustomer = data.isCustomer;
 
 
 
