@@ -8,5 +8,6 @@ namespace CRMSystem.Domains
     public interface ICustomerRepo
     {
         Task<List<Customer>> MostFrequentCustomer();
+        
     }
 }

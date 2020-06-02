@@ -12,8 +12,10 @@ namespace CRMSystem.Domains
         private readonly IInvoiceService _inService;
         private readonly IRepo<Payment> _pRepo;
         private readonly IPaymentRepo _payRepo;
+        private readonly ISaleRepo _sRepo;
         private readonly IRepo<Customer> _custRepo;
-        public SaleService(IRepo<Sale> repo,  IInvoiceService inService, ICartService cService, IRepo<Payment> pRepo, IPaymentRepo payRepo, IRepo<Customer> custRepo)
+
+        public SaleService(IRepo<Sale> repo,  IInvoiceService inService, ICartService cService, IRepo<Payment> pRepo, IPaymentRepo payRepo, IRepo<Customer> custRepo, ISaleRepo sRepo)
         {
             _repo = repo;
             _cService = cService;
@@ -21,6 +23,7 @@ namespace CRMSystem.Domains
             _pRepo=pRepo;
             _payRepo = payRepo;
             _custRepo = custRepo;
+            _sRepo = sRepo;
         }
         public async Task<int> Save(Sale data)
         {
@@ -158,7 +161,7 @@ namespace CRMSystem.Domains
         }
         public async Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
         {
-            var sales = await _repo.getByCustomerIDAsync(customerID);
+            var sales = await _sRepo.getByCustomerIDAsync(customerID);
 
             foreach (var sale in sales)
             {
@@ -166,6 +169,14 @@ namespace CRMSystem.Domains
             }
 
             return sales;
+        }
+
+        public async Task<List<Sale>> getSaleHistoryByDateAsync(DateTime startdate, DateTime enddate)
+        {
+            var sales = await _sRepo.getSaleHistoryByDate(startdate, enddate);
+            return sales;
+        
+        
         }
 
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CRMSystem.Domains
 {
     public class LeadService : ILeadService
@@ -33,6 +34,9 @@ namespace CRMSystem.Domains
                 Phone= lead.Phone,
                 UserCreated= lead.UserCreated
             };
+
+            lead.isCustomer = true;
+            await _lRepo.updateAsync(lead);
             var result=await _cRepo.insertAsync(customer);
             return result;
 

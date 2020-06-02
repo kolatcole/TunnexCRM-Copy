@@ -32,14 +32,27 @@ namespace CRMSystem
         }
 
         public IConfiguration Configuration { get; }
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors(c=> {
-            //    c.AddPolicy("AllowOrigin", opt => opt.AllowAnyOrigin());
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", opt => opt.WithOrigins("https://tunnexcrm.netlify.app/"));
             //});
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("https://tunnexcrm.netlify.app","http://localhost:4200").   
+                                                    AllowAnyHeader()
+                                                  .AllowAnyMethod();
+                                  });
+            });
+
+           //services.AddCors();
             services.AddMvc(x => x.EnableEndpointRouting = false);
             services.AddSwaggerGen(opt =>
             {
@@ -51,7 +64,7 @@ namespace CRMSystem
             });
             services.AddDbContext<TContext>(opt =>
             {
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultTLocal"), b => b.MigrationsAssembly("CRMSystem.Presentation.Core"));
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("CRMSystem.Presentation.Core"));
             });
 
             services.AddScoped<IRepo<Lead>, LeadRepo>();
@@ -72,6 +85,12 @@ namespace CRMSystem
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IProductRepo, ProductRepo>();
             services.AddScoped<ICustomerRepo, CustomerRepo>();
+            services.AddScoped<ISaleRepo, SaleRepo>();
+            services.AddScoped<IRepo<Skill>, SkillRepo>();
+            services.AddScoped<IRepo<Staff>, StaffRepo>();
+            services.AddScoped<IRepo<Qualification>, QualificationRepo>();
+            services.AddScoped<IRepo<Assessment>, AssessmentRepo>();
+            services.AddScoped<IRepo<StaffSkill>, StaffSkillRepo>();
 
 
 
@@ -82,70 +101,32 @@ namespace CRMSystem
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IInvoiceService, InvoiceService>();
             services.AddTransient<ILeadService, LeadService>();
+            services.AddTransient<IStaffSkillService, StaffSkillService>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            //else
-            //{
-            //    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            //    app.UseHsts();
-            //}
+            
 
-            //app.UseCors(opt =>
-            //{
-            //    opt.AllowAnyOrigin();
-            //});
-
-
-            // b4 3.0
-            //app.UseCors(opt =>
-
-            //    opt.AllowAnyOrigin()
-            //    .AllowAnyHeader()
-            //    .AllowAnyMethod()
-            //    .AllowCredentials()
-            //);
-
-            // b4 3.0
-            if (env.ApplicationName == Environments.Development)
+            if (env.IsDevelopment())
             {
+
                 app.UseDeveloperExceptionPage();
-                app.UseCors(builder =>
-                            builder
-                            .WithOrigins("http://localhost")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials()
-                            );
+               
+
+
             }
-            else
+
+            app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
             {
-                app.UseHsts();
-            }
-
-
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //    app.UseCors(builder =>
-            //                builder
-            //                .WithOrigins("http://localhost")
-            //                .AllowAnyHeader()
-            //                .AllowAnyMethod()
-            //                .AllowCredentials()
-            //                );
-            //}
-            //else
-            //{
-            //    app.UseHsts();
-            //}
+                endpoints.MapControllers();
+            });
 
             loggerFactory.AddSerilog(); // <-- enable Serilog Middleware
             var swaggerOpt = new SwaggerOpt();

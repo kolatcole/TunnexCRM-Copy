@@ -15,6 +15,8 @@ namespace CRMSystem.Domains
         public string Gender { get; set; }
         public string Image { get; set; }
         public List<Message> Message { get; set; }
+
+        public bool isCustomer { get; set; }
     }
 
     public class Message:BaseEntity
@@ -22,5 +24,8 @@ namespace CRMSystem.Domains
         public string Type { get; set; }
         public string Summary { get; set; }
         public int LeadID { get; set; }
+
+        public string Attachment { get; set; }
+
     }
 }

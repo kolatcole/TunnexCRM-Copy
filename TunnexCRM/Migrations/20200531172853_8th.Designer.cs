@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRMSystem.Presentation.Core.Migrations
 {
     [DbContext(typeof(TContext))]
-    [Migration("20200528185650_7th")]
-    partial class _7th
+    [Migration("20200531172853_8th")]
+    partial class _8th
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,35 @@ namespace CRMSystem.Presentation.Core.Migrations
                 .HasAnnotation("ProductVersion", "3.1.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("CRMSystem.Domains.Assessment", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IAS")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SAS")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SKAS")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StaffSkillID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("StaffSkillID");
+
+                    b.ToTable("Assessments");
+                });
 
             modelBuilder.Entity("CRMSystem.Domains.Cart", b =>
                 {
@@ -84,6 +113,9 @@ namespace CRMSystem.Presentation.Core.Migrations
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalSales")
+                        .HasColumnType("int");
 
                     b.Property<int>("UserCreated")
                         .HasColumnType("int");
@@ -189,8 +221,8 @@ namespace CRMSystem.Presentation.Core.Migrations
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Quantity")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -242,6 +274,9 @@ namespace CRMSystem.Presentation.Core.Migrations
                     b.Property<int>("UserModified")
                         .HasColumnType("int");
 
+                    b.Property<bool>("isCustomer")
+                        .HasColumnType("bit");
+
                     b.HasKey("ID");
 
                     b.ToTable("Leads");
@@ -253,6 +288,9 @@ namespace CRMSystem.Presentation.Core.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Attachment")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
@@ -419,6 +457,12 @@ namespace CRMSystem.Presentation.Core.Migrations
                     b.Property<decimal>("SalePrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("StockLevel")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalSold")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserCreated")
                         .HasColumnType("int");
 
@@ -428,6 +472,35 @@ namespace CRMSystem.Presentation.Core.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("CRMSystem.Domains.Qualification", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StaffID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("StaffID");
+
+                    b.ToTable("Qualifications");
                 });
 
             modelBuilder.Entity("CRMSystem.Domains.Role", b =>
@@ -504,9 +577,102 @@ namespace CRMSystem.Presentation.Core.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserCreated")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserModified")
+                        .HasColumnType("int");
+
                     b.HasKey("ID");
 
                     b.ToTable("Skills");
+                });
+
+            modelBuilder.Entity("CRMSystem.Domains.Staff", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateofBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HEL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserCreated")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserModified")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Staffs");
+                });
+
+            modelBuilder.Entity("CRMSystem.Domains.StaffSkill", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("CompetencyValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("SkillID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StaffID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SupervisorID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("StaffSkills");
                 });
 
             modelBuilder.Entity("CRMSystem.Domains.User", b =>
@@ -557,6 +723,15 @@ namespace CRMSystem.Presentation.Core.Migrations
                     b.ToTable("AppUsers");
                 });
 
+            modelBuilder.Entity("CRMSystem.Domains.Assessment", b =>
+                {
+                    b.HasOne("CRMSystem.Domains.StaffSkill", null)
+                        .WithMany("Assessments")
+                        .HasForeignKey("StaffSkillID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CRMSystem.Domains.Invoice", b =>
                 {
                     b.HasOne("CRMSystem.Domains.User", "Cashier")
@@ -594,6 +769,15 @@ namespace CRMSystem.Presentation.Core.Migrations
                     b.HasOne("CRMSystem.Domains.Role", null)
                         .WithMany("Privileges")
                         .HasForeignKey("RoleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CRMSystem.Domains.Qualification", b =>
+                {
+                    b.HasOne("CRMSystem.Domains.Staff", null)
+                        .WithMany("Qualifications")
+                        .HasForeignKey("StaffID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

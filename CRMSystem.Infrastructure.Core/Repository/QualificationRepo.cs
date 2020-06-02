@@ -1,62 +1,87 @@
 ﻿using CRMSystem.Domains;
-using CRMSystem.Domains.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace CRMSystem.Infrastructure
 {
     public class QualificationRepo : IRepo<Qualification>
     {
+        private readonly TContext _context;
+        public QualificationRepo(TContext context)
+        {
+
+            _context = context;
+        }
         public Task<int> deleteAsync(Qualification data)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Qualification>> getAllAsync()
+        public async Task<List<Qualification>> getAllAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var Qualification = await _context.Qualifications.ToListAsync();
+                return Qualification;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
         }
 
-        public Task<Qualification> getAsync(int ID)
+        
+        public async Task<Qualification> getAsync(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var Qualification = await _context.Qualifications.Where(x => x.ID == ID).FirstOrDefaultAsync();
+                return Qualification;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
         }
 
-        public Task<List<Qualification>> getByCustomerIDAsync(int customerID)
+
+
+        public async Task<int> insertAsync(Qualification data)
         {
-            throw new NotImplementedException();
-        }
+            var Qualification = new Qualification();
+            try
+            {
+                if (data != null)
+                {
+                    Qualification = new Qualification
+                    {
+                        EndDate=data.EndDate,
+                        StaffID=data.StaffID,
+                        StartDate=data.StartDate,
+                        Name=data.Name,
+                        Status=data.Status
+                    };
+                    await _context.Qualifications.AddAsync(Qualification);
+                    await _context.SaveChangesAsync();
+                }
 
-        public Task<int> insertAsync(Qualification data)
-        {
-            //var qual = new Qualification();
-            //try
-            //{
-            //    if (data != null)
-            //    {
-
-            //        qual = new Qualification
-            //        {
-
-            //            Name = data.Name,
-            //            Status = data.Status,
-            //            StartDate = data.StartDate,
-            //            EndDate = data.EndDate,
-            //            EmployeeID = data.EmployeeID
-            //        };
-            //        await _context.Qua.AddAsync(qual);
-            //        await _context.SaveChangesAsync();
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-            //return payment.ID;
-            throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Qualification.ID;
         }
 
         public Task<int> insertListAsync(List<Qualification> data)
@@ -64,9 +89,33 @@ namespace CRMSystem.Infrastructure
             throw new NotImplementedException();
         }
 
-        public Task<int> updateAsync(Qualification data)
+
+
+        public async Task<int> updateAsync(Qualification data)
         {
-            throw new NotImplementedException();
+            var qual = await _context.Qualifications.FindAsync(data.ID);
+            try
+            {
+                if (qual != null)
+                {
+
+
+                    qual.EndDate = data.EndDate;
+                    qual.StaffID = data.StaffID;
+                    qual.StartDate = data.StartDate;
+                    qual.Name = data.Name;
+                    qual.Status = data.Status;
+
+                    _context.Qualifications.Update(qual);
+                    await _context.SaveChangesAsync();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return qual.ID;
         }
     }
 }
