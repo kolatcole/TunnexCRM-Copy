@@ -128,17 +128,17 @@ namespace CRMSystem.Domains
 
             return SID;
         }
-        public async Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
-        {
-            var sales = await _repo.getByCustomerIDAsync(customerID);
+        //public async Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
+        //{
+        //    var sales = await _repo.getByCustomerIDAsync(customerID);
 
-            foreach (var sale in sales)
-            {
-                sale.Payment = await _payRepo.getPaymentByInvoiceNo(sale.Invoice.InvoiceNo);
-            }
+        //    foreach (var sale in sales)
+        //    {
+        //        sale.Payment = await _payRepo.getPaymentByInvoiceNo(sale.Invoice.InvoiceNo);
+        //    }
             
-            return sales;
-        }
+        //    return sales;
+        //}
         public async Task<Sale> GetSaleByIDAsync(int ID)
         {
             var sale = await _repo.getAsync(ID);
@@ -159,17 +159,17 @@ namespace CRMSystem.Domains
 
             return sales;
         }
-        public async Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
-        {
-            var sales = await _sRepo.getByCustomerIDAsync(customerID);
+        //public async Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
+        //{
+        //    var sales = await _sRepo.getByCustomerIDAsync(customerID);
 
-            foreach (var sale in sales)
-            {
-                sale.Payment = await _payRepo.getPaymentByInvoiceNo(sale.Invoice.InvoiceNo);
-            }
+        //    foreach (var sale in sales)
+        //    {
+        //        sale.Payment = await _payRepo.getPaymentByInvoiceNo(sale.Invoice.InvoiceNo);
+        //    }
 
-            return sales;
-        }
+        //    return sales;
+        //}
 
         public async Task<List<Sale>> getSaleHistoryByDateAsync(DateTime startdate, DateTime enddate)
         {
@@ -179,5 +179,9 @@ namespace CRMSystem.Domains
         
         }
 
+        public Task<List<Sale>> GetSalesByCustomerIDAsync(int customerID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

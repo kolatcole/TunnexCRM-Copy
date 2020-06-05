@@ -1,0 +1,53 @@
+2020-06-04 19:46:35.133 +01:00 [Information] User profile is available. Using '"C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-04 19:46:39.007 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/values  
+2020-06-04 19:46:40.644 +01:00 [Information] Request finished in 1619.1607ms 404 
+2020-06-04 19:47:07.000 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger  
+2020-06-04 19:47:07.089 +01:00 [Information] Request finished in 28.4216ms 301 
+2020-06-04 19:47:07.159 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/index.html  
+2020-06-04 19:47:07.958 +01:00 [Information] Request finished in 771.862ms 200 text/html;charset=utf-8
+2020-06-04 19:47:09.528 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/v1/swagger.json  
+2020-06-04 19:47:09.844 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-bundle.js.map  
+2020-06-04 19:47:09.990 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js.map  
+2020-06-04 19:47:10.138 +01:00 [Information] Request finished in 302.9957ms 404 
+2020-06-04 19:47:10.161 +01:00 [Information] Request finished in 294.1209ms 404 
+2020-06-04 19:47:10.691 +01:00 [Information] Request finished in 1165.5248ms 200 application/json;charset=utf-8
+2020-06-04 19:54:24.784 +01:00 [Information] Request starting HTTP/2.0 POST https://localhost:44363/api/StaffSkill/SendMessage application/json 70
+2020-06-04 19:54:24.820 +01:00 [Information] CORS policy execution failed.
+2020-06-04 19:54:24.823 +01:00 [Information] Request origin "https://localhost:44363" does not have permission to access the resource.
+2020-06-04 19:54:24.855 +01:00 [Information] Executing endpoint '"CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)"'
+2020-06-04 19:54:25.080 +01:00 [Information] Route matched with "{action = \"SendMessage\", controller = \"StaffSkill\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendMessage(CRMSystem.Domains.Core.RequestData)" on controller "CRMSystem.Presentation.Core.Controllers.StaffSkillController" ("CRMSystem.Presentation.Core").
+2020-06-04 19:55:25.590 +01:00 [Information] Executing ObjectResult, writing value of type '"CRMSystem.Domains.Core.SMSMessageData"'.
+2020-06-04 19:55:28.364 +01:00 [Information] Executed action "CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)" in 63252.7737ms
+2020-06-04 19:55:28.382 +01:00 [Information] Executed endpoint '"CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)"'
+2020-06-04 19:55:28.387 +01:00 [Information] Request finished in 63606.5449ms 200 application/json; charset=utf-8
+2020-06-04 21:19:19.153 +01:00 [Information] User profile is available. Using '"C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-04 21:19:21.168 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/api/values  
+2020-06-04 21:19:21.748 +01:00 [Information] Request finished in 564.0738ms 404 
+2020-06-04 21:19:34.707 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger  
+2020-06-04 21:19:34.835 +01:00 [Information] Request finished in 14.6251ms 301 
+2020-06-04 21:19:34.839 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/index.html  
+2020-06-04 21:19:35.310 +01:00 [Information] Request finished in 460.2911ms 200 text/html;charset=utf-8
+2020-06-04 21:19:37.278 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44363/swagger/v1/swagger.json  
+2020-06-04 21:19:38.627 +01:00 [Information] Request finished in 1353.4191ms 200 application/json;charset=utf-8
+2020-06-04 21:19:38.685 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-bundle.js.map  
+2020-06-04 21:19:38.806 +01:00 [Information] Request finished in 117.2095ms 404 
+2020-06-04 21:19:38.950 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44363/swagger/swagger-ui-standalone-preset.js.map  
+2020-06-04 21:19:39.017 +01:00 [Information] Request finished in 12.1406ms 404 
+2020-06-04 21:20:30.751 +01:00 [Information] Request starting HTTP/2.0 POST https://localhost:44363/api/StaffSkill/SendMessage application/json 63
+2020-06-04 21:20:30.868 +01:00 [Information] CORS policy execution failed.
+2020-06-04 21:20:30.872 +01:00 [Information] Request origin "https://localhost:44363" does not have permission to access the resource.
+2020-06-04 21:20:30.890 +01:00 [Information] Executing endpoint '"CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)"'
+2020-06-04 21:20:31.116 +01:00 [Information] Route matched with "{action = \"SendMessage\", controller = \"StaffSkill\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendMessage(CRMSystem.Domains.Core.RequestData)" on controller "CRMSystem.Presentation.Core.Controllers.StaffSkillController" ("CRMSystem.Presentation.Core").
+2020-06-04 21:21:00.680 +01:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2020-06-04 21:21:00.744 +01:00 [Information] Executed action "CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)" in 29601.4429ms
+2020-06-04 21:21:00.763 +01:00 [Information] Executed endpoint '"CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)"'
+2020-06-04 21:21:00.769 +01:00 [Information] Request finished in 30028.1474ms 200 text/plain; charset=utf-8
+2020-06-04 21:33:16.417 +01:00 [Information] Request starting HTTP/2.0 POST https://localhost:44363/api/StaffSkill/SendMessage application/json 63
+2020-06-04 21:33:16.430 +01:00 [Information] CORS policy execution failed.
+2020-06-04 21:33:16.436 +01:00 [Information] Request origin "https://localhost:44363" does not have permission to access the resource.
+2020-06-04 21:33:16.443 +01:00 [Information] Executing endpoint '"CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)"'
+2020-06-04 21:33:16.450 +01:00 [Information] Route matched with "{action = \"SendMessage\", controller = \"StaffSkill\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendMessage(CRMSystem.Domains.Core.RequestData)" on controller "CRMSystem.Presentation.Core.Controllers.StaffSkillController" ("CRMSystem.Presentation.Core").
+2020-06-04 21:33:20.309 +01:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2020-06-04 21:33:20.315 +01:00 [Information] Executed action "CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)" in 3861.0715ms
+2020-06-04 21:33:20.321 +01:00 [Information] Executed endpoint '"CRMSystem.Presentation.Core.Controllers.StaffSkillController.SendMessage (CRMSystem.Presentation.Core)"'
+2020-06-04 21:33:20.326 +01:00 [Information] Request finished in 3913.3167ms 200 text/plain; charset=utf-8
