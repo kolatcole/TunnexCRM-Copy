@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using CRMSystem.Domains;
 using CRMSystem.Domains.Core;
@@ -145,11 +146,6 @@ namespace CRMSystem.Presentation.Core.Controllers
         {
             //https://api.sandbox.africastalking.com/version1/messaging
 
-            var apiKey = "";
-            //request.username = "sandbox";
-            //request.to = "";
-            //request.message = "";
-
             
 
             HttpClient _client = new HttpClient();
@@ -180,7 +176,38 @@ namespace CRMSystem.Presentation.Core.Controllers
         }
 
 
+        [HttpGet("FetchMessage/{username}")]
+        public async Task<IActionResult> FetchMessage(string username)
+        {
 
+            HttpClient _client = new HttpClient();
+            //https://api.sandbox.africastalking.com/version1/messaging
+
+            _client.BaseAddress = new Uri("https://api.sandbox.africastalking.com/");
+
+            var request = new HttpRequestMessage(HttpMethod.Get, "version1/messaging");
+            //request.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            //request.Headers.Add("apiKey", "a269e0154e849504fffa1c6210890d85e43998c15412248db1612a190b9b44d6");
+
+            _client.DefaultRequestHeaders.Add("apiKey", "a269e0154e849504fffa1c6210890d85e43998c15412248db1612a190b9b44d6");
+            _client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+           // var jsonString = data.ToString();
+            request.Content = new StringContent(username, Encoding.UTF8, "application/json");
+            var res = "";
+            var response = await _client.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+
+                res = await response.Content.ReadAsStringAsync();
+
+            
+            }
+
+            return Ok(res);
+
+        }
 
 
 

@@ -25,5 +25,10 @@ namespace CRMSystem.Domains.Core
         public string to { get; set; }
         public string message { get; set; }
     }
+    public class FetchRequest
+    {
+        public string username { get; set; }
+        public string lastReceivedId { get; set; }
+    }
 
 }
